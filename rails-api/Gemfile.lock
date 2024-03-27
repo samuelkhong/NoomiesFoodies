@@ -117,6 +117,7 @@ GEM
     nokogiri (1.16.3-x86_64-linux)
       racc (~> 1.4)
     orm_adapter (0.5.0)
+    pg (1.5.6)
     psych (5.1.2)
       stringio
     puma (5.6.8)
@@ -161,7 +162,6 @@ GEM
     responders (3.1.1)
       actionpack (>= 5.2)
       railties (>= 5.2)
-    sqlite3 (1.7.3-x86_64-linux)
     stringio (3.1.0)
     thor (1.3.1)
     timeout (0.4.1)
@@ -181,9 +181,9 @@ DEPENDENCIES
   bootsnap
   debug
   devise (~> 4.9)
+  pg
   puma (~> 5.0)
   rails (~> 7.0.6)
-  sqlite3 (~> 1.4)
   tzinfo-data
 
 RUBY VERSION
