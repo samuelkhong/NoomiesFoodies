@@ -15,7 +15,7 @@ Rails.application.config.middleware.insert_before 0, Rack::Cors do
   end
 
   allow do
-    origins "http://localhost:5000/" # the default port for the Flask Application
+    origins "http://127.0.0.1:5000/" # the default port for the Flask Application
 
     resource "*",
       headers: :any,
