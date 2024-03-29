@@ -35,14 +35,20 @@ class Users::RegistrationsController < Devise::RegistrationsController
    def update
      @user = User.find(params[:id])
 
-     if @user.update()
+     if @user.update(user_params)
+        render json: @user, status: :created
+     else
+        render json: { message: @user.errors.full_messages.to_sentence}, status: :unprocessible_entity
+     end
 
    end
 
   # DELETE /resource
-  # def destroy
-  #   super
-  # end
+   def destroy
+    @user = User.find(params[:id])
+    @user.update(archived_at: Time.current.to_s)
+    head :no_content
+   end
 
   # GET /resource/cancel
   # Forces the session data which is usually expired after sign
