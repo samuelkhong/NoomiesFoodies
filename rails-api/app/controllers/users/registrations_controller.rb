@@ -14,9 +14,17 @@ class Users::RegistrationsController < Devise::RegistrationsController
   # end
 
   # POST /resource
-  # def create
-  #   super
-  # end
+   def create
+      build_resource(sign_up_params)
+
+      if resource.save
+        sign_in(resource)
+        render json: {user: resource, message: 'Successfully signed up'}, status: :created
+      else
+        render json: { message: resource.errors.full_messages.to_sentence}, status: :unprocessible_entity
+      end
+     
+   end
 
   # GET /resource/edit
   # def edit
@@ -42,7 +50,12 @@ class Users::RegistrationsController < Devise::RegistrationsController
   #   super
   # end
 
-  # protected
+   protected
+
+   def sign_up_params 
+      params.permit(:email, :password, :password_confirmation)
+   end
+
 
   # If you have extra params to permit, append them to the sanitizer.
   # def configure_sign_up_params
