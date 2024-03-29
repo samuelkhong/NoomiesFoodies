@@ -21,7 +21,7 @@ class Users::RegistrationsController < Devise::RegistrationsController
         sign_in(resource)
         render json: {user: resource, message: 'Successfully signed up'}, status: :created
       else
-        render json: { message: resource.errors.full_messages.to_sentence}, status: :unprocessible_entity
+        render json: { message: resource.errors.full_messages.to_sentence}, status: :unprocessable_entity
       end
      
    end
@@ -38,7 +38,7 @@ class Users::RegistrationsController < Devise::RegistrationsController
      if @user.update(user_params)
         render json: @user, status: :created
      else
-        render json: { message: @user.errors.full_messages.to_sentence}, status: :unprocessible_entity
+        render json: { message: @user.errors.full_messages.to_sentence}, status: :unprocessable_entity
      end
 
    end
