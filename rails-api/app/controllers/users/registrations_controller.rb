@@ -32,9 +32,12 @@ class Users::RegistrationsController < Devise::RegistrationsController
   # end
 
   # PUT /resource
-  # def update
-  #   super
-  # end
+   def update
+     @user = User.find(params[:id])
+
+     if @user.update()
+
+   end
 
   # DELETE /resource
   # def destroy
@@ -52,10 +55,14 @@ class Users::RegistrationsController < Devise::RegistrationsController
 
    protected
 
+   # will update permitted params as needed
    def sign_up_params 
       params.permit(:email, :password, :password_confirmation)
    end
 
+   def user_params
+    params.permit(:email)
+   end
 
   # If you have extra params to permit, append them to the sanitizer.
   # def configure_sign_up_params
