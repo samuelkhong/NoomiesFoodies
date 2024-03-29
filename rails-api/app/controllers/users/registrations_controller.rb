@@ -63,7 +63,7 @@ class Users::RegistrationsController < Devise::RegistrationsController
 
    # will update permitted params as needed
    def sign_up_params 
-      params.permit(:email, :password, :password_confirmation)
+      params.permit(:email, :password)
    end
 
    def user_params
