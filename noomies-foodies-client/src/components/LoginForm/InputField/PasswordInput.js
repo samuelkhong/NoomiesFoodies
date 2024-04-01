@@ -5,7 +5,7 @@ const PasswordInput = ({ value, onChange }) => (
        value={value}
        onChange={onChange}
        className='form-control'
-       placeholder='Enter your Password'
+       placeholder='Enter your password'
        id="password"
     />
    );
