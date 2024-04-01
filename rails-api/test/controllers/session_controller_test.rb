@@ -13,6 +13,7 @@ include Devise::Test::ControllerHelpers
         @user = User.create(email: 'sessionstest@gmail.com', password: '123456')
         post :create, params: { email: @user.email, password: @user.password}
         assert_response :created
+        assert_equal @user.id, session['warden.user.user.key'][0][0]
     end
 
     test 'should allow user to log out' do
