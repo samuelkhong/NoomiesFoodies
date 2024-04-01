@@ -1,0 +1,103 @@
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap');
+
+/*custom variables */
+:root {
+    /*declare colors */
+    --primary-clr:  #309F48;
+    --secondary-clr: #5B6056;
+
+    /*font weights*/
+    --fw-regular: 400;
+    --fw-bold: 800;
+
+}
+
+
+/*standardize the page */
+html, body {
+    height: 100%;
+    width: 100%;
+    margin: 0;
+    padding: 0;
+    font-family: 'Open Sans',  'sans-serif';
+
+}
+.App {
+    height: 100%
+}
+
+#root {
+    height: 100%;
+    width: 100%;
+}
+
+h1 {
+    padding-top: 21.92%;
+    font-weight: var(--fw-bold);
+    color: var(--primary-clr);
+    font-size: 2.8125rem;
+    margin:  0 auto;
+}
+ h1 .clr-secondary {
+    color: var(--secondary-clr);
+ }
+
+ h1 p {
+    font-size: 1.125rem;
+ }
+
+.flex-container {
+    display: flex;
+    justify-content: center;
+    margin: 0 .5rem;
+    height: 100%;
+}
+
+.flex-item-left {
+    display: flex;
+    background-color: bisque;
+    justify-content: center;
+    width: 42.15%;
+}
+.flex-item-right {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: aquamarine;
+    width: 57.85%;
+    position: relative;
+}
+.form-group {
+    display: flex;
+    flex-direction: column;
+    width: 76.97%;
+}
+.form-control {
+    height: 50%;
+    border-radius: 7px;
+    border-color: #D6D6D6;
+    background-color: #FBFBFB;
+    font-size: 1.125rem;
+}
+.submit-btn {
+    background-color: var(--primary-clr);
+    color: #FFFFFF;
+}
+
+p a {
+    color: var(--primary-clr);
+    text-decoration: none;
+    font-size: 1.125rem;
+    font-weight: var(--fw-bold);
+}
+
+.logo {
+    margin-top: 26.51%;    
+    width: 75.98%;
+    height: 32.65%;
+    border: solid black 1px;
+    margin-left: auto;
+    margin-right: auto;
+
+}
+
