@@ -10,5 +10,8 @@ one:
   encrypted_password: 123456
   archived_at: nil
 #
-#two: {}
-# column: value
+two: 
+ id: 2
+ email: fixtures2@email.com
+ encrypted_password: '123456'
+ 
