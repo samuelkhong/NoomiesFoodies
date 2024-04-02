@@ -20,6 +20,8 @@ html, body {
     margin: 0;
     padding: 0;
     font-family: 'Open Sans',  'sans-serif';
+    box-sizing: border-box;
+
 
 }
 .App {
@@ -33,17 +35,27 @@ html, body {
 
 h1 {
     padding-top: 21.92%;
+    padding-right: 31.03%;
+    padding-left: 25.61%;
+  
     font-weight: var(--fw-bold);
     color: var(--primary-clr);
-    font-size: 2.8125rem;
+    font-size:2.8125rem;
     margin:  0 auto;
+    line-height: 3.8125rem;
 }
  h1 .clr-secondary {
     color: var(--secondary-clr);
  }
 
- h1 p {
+ h1 + p { 
+    padding-left: 32.266%;
+    padding-right: 37.68%;
     font-size: 1.125rem;
+    line-height: 2.0425rem;
+    font-weight: var(--fw-regular);
+    color: #6D6D6D;
+
  }
 
 .flex-container {
@@ -65,23 +77,47 @@ h1 {
     align-items: center;
     background-color: aquamarine;
     width: 57.85%;
-    position: relative;
 }
 .form-group {
-    display: flex;
-    flex-direction: column;
-    width: 76.97%;
+    box-sizing: border-box;
+    width: 100%;
+    padding-left:10.71%;
+    padding-right: 16%;
+    padding-top: 8.59%;
 }
+.form-element {
+    display:flex;
+    flex-direction: column;
+    margin-bottom: 1.6875rem;
+}
+.form-element + .form-element + .form-element {
+    margin-bottom: 0rem;
+}
+
+
 .form-control {
-    height: 50%;
     border-radius: 7px;
     border-color: #D6D6D6;
     background-color: #FBFBFB;
     font-size: 1.125rem;
+    height: 3.8125rem;
+     
 }
+.form-label {
+    padding-left: 1.5rem;
+}
+
 .submit-btn {
     background-color: var(--primary-clr);
     color: #FFFFFF;
+    height: 3.8125rem /*heihgt of .form-control*/
+    
+}
+
+.form-group + p {
+    padding-left: 26.23%;
+    padding-right: 31.53%;
+    padding-top: 2.4%;
 }
 
 p a {
@@ -92,7 +128,8 @@ p a {
 }
 
 .logo {
-    margin-top: 26.51%;    
+    box-sizing: border-box;
+    margin-top: 26.56%;    
     width: 75.98%;
     height: 32.65%;
     border: solid black 1px;
