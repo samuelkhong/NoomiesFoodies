@@ -12,18 +12,32 @@ const LoginForm  = () =>  {
     const handleSubmit = (event) => {
         event.preventDefault(); // 
         //toDo
-
     }
 // returns a form  that has password and email input and submission button. 
 return (
-    <form className='form-group'>
-        <label htmlFor="email" className='form-label'>Email address</label>
-        <EmailInput value={email} onChange={(event) => setEmail(event.target.value)} />
+    <>
+        <form className='form-group'>
+            <div class="form-element">
+                <label htmlFor="email" className='form-label'>Email address</label>
+                <EmailInput value={email} onChange={(event) => setEmail(event.target.value)} />
+                
+            </div>
 
-        <label htmlFor="password" className='form-label'>Password</label>
-        <PasswordInput value={password} onChange={(event) => setPassword(event.target.value)} />
+            
+            <div class="form-element">
+                <label htmlFor="password" className='form-label'>Password</label>
+                <PasswordInput value={password} onChange={(event) => setPassword(event.target.value)} />
+                
+            </div>
 
-        <SubmitButton onClick={handleSubmit} />
-    </form>
+            <div class="form-element">
+                <SubmitButton onClick={handleSubmit} />
+            </div>
+
+       
+
+        </form>
+
+    </>
 )};
 export default LoginForm;
