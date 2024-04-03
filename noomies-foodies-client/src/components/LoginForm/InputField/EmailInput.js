@@ -7,7 +7,7 @@ const EmailInput = ({ value, onChange }) => (
        className='form-control'
        placeholder='Enter your email'
        id="email"
-       autocomplete="email"
+       autoComplete="email"
     />
    );
 
