@@ -72,13 +72,7 @@ h1 {
     align-items: center;
     width: 50.75rem;
 }
-input {
-    padding-left: 1.5rem;
-    border-color: #D6D6D6;
-    background-color: #FBFBFB;
-    color:black;
-    height: 3.81rem;
-}
+
 
 .form-group {
     box-sizing: border-box;
@@ -107,10 +101,15 @@ input::placeholder {
 }
 
 .form-control {
+    padding: 0rem 0rem 0rem 1.5rem;
+    margin: 1px;
+    border-color: #D6D6D6;
+    background-color: #FBFBFB;
+    color:black;
+    height: 3.81rem;
     border-radius: 7px;
     font-size: 1.125rem;
-    height: 3.8125rem;
-     
+    height: 3.81rem;
 }
 .form-label {
     margin-left: 1.5rem;
@@ -125,7 +124,7 @@ input::placeholder {
     color: #FFFFFF;
     border-color: var(--primary-clr);
     font-size: 1.5rem;
-    height: 3.8125rem /*heihgt of .form-control*/
+    border: 1px;
 }
 
 
