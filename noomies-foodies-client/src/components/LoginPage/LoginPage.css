@@ -49,7 +49,7 @@ h1 {
     padding-left: 16.38rem;
     padding-right: 19.13rem;
     font-size: 1.5rem;
-    line-height: 0rem;
+    line-height: 2.04rem;
     font-weight: var(--fw-regular);
     color: #6D6D6D;
 
@@ -58,7 +58,6 @@ h1 {
 .flex-container {
     display: flex;
     justify-content: center;
-    height: 100%;
 }
 
 .flex-item-left {
@@ -73,6 +72,14 @@ h1 {
     align-items: center;
     width: 50.75rem;
 }
+input {
+    padding-left: 1.5rem;
+    border-color: #D6D6D6;
+    background-color: #FBFBFB;
+    color:black;
+    height: 3.81rem;
+}
+
 .form-group {
     box-sizing: border-box;
     width: 37.19rem;
@@ -94,18 +101,10 @@ h1 {
     padding-bottom: 0rem;
 }
 
-input {
-    padding-left: 1.5rem;
-    border-color: #D6D6D6;
-    background-color: #FBFBFB;
-    color:black;
-}
+
 input::placeholder {
     color: #A9A9A9;
-
-
 }
-
 
 .form-control {
     border-radius: 7px;
@@ -117,6 +116,7 @@ input::placeholder {
     margin-left: 1.5rem;
     margin-bottom: .44rem;
     font-size: 1.13rem;
+    line-height: 1.53rem;
 
 }
 
@@ -158,5 +158,5 @@ p a {
     max-width: 37.44rem;
     max-height: 23.13rem;
     display:block;
-}
+    background-color: rgba(240, 255, 220, 0.5);}
 
