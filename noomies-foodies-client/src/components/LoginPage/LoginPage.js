@@ -8,6 +8,7 @@ const LoginPage = () => {
         <div class="flex-container">
             <div class="flex-item-left">
                 <img class="logo" alt="logo"src="/images/Logo foodies.svg"></img>
+                <img class="background-leaf" alt="leaf" src="/images/login-fruit.png"></img>
             </div>
             <div class="flex-item-right">
                 <h1>Welcome <span class="clr-secondary">Back!</span></h1>
