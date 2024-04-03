@@ -5,13 +5,13 @@ import './LoginPage.css'
 const LoginPage = () => {
   return (
     <>
-        <div class="flex-container">
-            <div class="flex-item-left">
-                <img class="logo" alt="logo"src="/images/Logo foodies.svg"></img>
-                <img class="background-leaf" alt="leaf" src="/images/login-fruit.png"></img>
+        <div className="flex-container">
+            <div className="flex-item-left">
+                <img className="logo" alt="logo"src="/images/Logo foodies.svg"></img>
+                <img className="background-leaf" alt="leaf" src="/images/login-fruit.png"></img>
             </div>
-            <div class="flex-item-right">
-                <h1>Welcome <span class="clr-secondary">Back!</span></h1>
+            <div className="flex-item-right">
+                <h1>Welcome <span className="clr-secondary">Back!</span></h1>
                 <p>Login and get started!</p>
                 <LoginForm />
                 <p>Don't have an account yet? <a href='#'>Sign up now!</a></p>

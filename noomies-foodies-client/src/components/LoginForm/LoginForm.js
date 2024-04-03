@@ -17,20 +17,18 @@ const LoginForm  = () =>  {
 return (
     <>
         <form className='form-group'>
-            <div class="form-element">
+            <div className="form-element">
                 <label htmlFor="email" className='form-label'>Email address</label>
                 <EmailInput value={email} onChange={(event) => setEmail(event.target.value)} />
                 
             </div>
-
             
-            <div class="form-element">
+            <div className="form-element">
                 <label htmlFor="password" className='form-label'>Password</label>
                 <PasswordInput value={password} onChange={(event) => setPassword(event.target.value)} />
-                
             </div>
 
-            <div class="form-element">
+            <div className="form-element">
                 <SubmitButton onClick={handleSubmit} />
             </div>
 

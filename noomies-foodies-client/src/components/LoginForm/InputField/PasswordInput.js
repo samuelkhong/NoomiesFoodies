@@ -7,6 +7,7 @@ const PasswordInput = ({ value, onChange }) => (
        className='form-control'
        placeholder='Enter your password'
        id="password"
+       autoComplete="current-password"
     />
    );
 
