@@ -6,6 +6,8 @@ const LoginPage = () => {
   return (
     <>
         <div className="flex-container">
+            <div className="background-left"></div>
+
             <div className="flex-item-left">
                 <img className="logo" alt="logo"src="/images/Logo foodies.svg"></img>
                 <img className="background-leaf" alt="leaf" src="/images/login-fruit.png"></img>

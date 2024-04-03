@@ -31,6 +31,7 @@ html, body {
 }
 
 h1 {
+    margin: 0; /* Set margin to zero to remove white space */
     padding-top: 14.06rem;
     padding-left: 13rem;
     padding-right: 15.75rem;
@@ -52,18 +53,31 @@ h1 {
     line-height: 2.04rem;
     font-weight: var(--fw-regular);
     color: #6D6D6D;
-
  }
 
 .flex-container {
+    position:relative; 
     display: flex;
     justify-content: center;
 }
 
+.background-left {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: calc((101% - 1440px) / 2); /* Adjust width based on the difference between screen width and 1440px */
+    height: 100%; 
+    background-color: rgba(240, 255, 220, 0.5); /* Set the desired background color */
+    margin-right: 0; /* Ensure no right margin */
+    padding-right: 0; /* Ensure no right padding */
+}
+
 .flex-item-left {
     background-color: rgba(240, 255, 220, 0.5); 
-    margin-left: 1.31rem;
+    /*margin-left: 1.31rem;*/
+    margin-right:0;
     width: 37.94rem;
+    margin-left: auto; /* Push the container to the right */
 }
 .flex-item-right {
     display: flex;
@@ -71,6 +85,7 @@ h1 {
     flex-direction: column;
     align-items: center;
     width: 50.75rem;
+    margin-right: auto; /* Push the container to the left */
 }
 
 
@@ -116,7 +131,6 @@ input::placeholder {
     margin-bottom: .44rem;
     font-size: 1.13rem;
     line-height: 1.53rem;
-
 }
 
 .submit-btn {
@@ -126,7 +140,6 @@ input::placeholder {
     font-size: 1.5rem;
     border: 1px;
 }
-
 
 .form-group + p {
     margin-left: 13.31rem;
@@ -147,15 +160,28 @@ p a {
     display: block;
     margin-top: 17rem;    
     margin-left: 5.88rem;
-    margin-right: auto;
     max-width: 28.81rem;
     max-height: 20.94rem;
-
 }
+
 .background-leaf {
-    opacity: 18%;  
+    opacity: .18;  
     max-width: 37.44rem;
     max-height: 23.13rem;
-    display:block;
-    background-color: rgba(240, 255, 220, 0.5);}
+    display: block;
+    background-color: rgba(240, 255, 220, 0.5);
+}
+
+/* Media query for screens wider than 1440px */
+@media (max-width: 1440px) {
+    .flex-item-left,
+    .flex-item-right {
+        padding-left: 0; /* Reset padding when screen width is 1440px or less */
+        padding-right: 0;
+    }
+    .flex-container{
+        height: auto;
+    }
+     
+  }
 
