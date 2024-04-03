@@ -139,6 +139,14 @@ input::placeholder {
     border-color: var(--primary-clr);
     font-size: 1.5rem;
     border: 1px;
+    transition: background-color 0.3s, color 0.3s;
+}
+.submit-btn:hover {
+    background-color: #376c06; /* Change to a darker color on hover */
+}
+
+.submit-btn:active {
+    background-color: #309F48; /* Change to a darker color when clicked */
 }
 
 .form-group + p {
@@ -179,9 +187,5 @@ p a {
         padding-left: 0; /* Reset padding when screen width is 1440px or less */
         padding-right: 0;
     }
-    .flex-container{
-        height: auto;
-    }
-     
   }
 
