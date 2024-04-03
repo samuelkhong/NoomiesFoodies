@@ -65,7 +65,7 @@ h1 {
     position: absolute;
     top: 0;
     left: 0;
-    width: calc((101% - 1440px) / 2); /* Adjust width based on the difference between screen width and 1440px */
+    width: calc((101.27% - 1440px) / 2); /* Adjust width based on the difference between screen width and 1440px */
     height: 100%; 
     background-color: rgba(240, 255, 220, 0.5); /* Set the desired background color */
     margin-right: 0; /* Ensure no right margin */
@@ -74,7 +74,6 @@ h1 {
 
 .flex-item-left {
     background-color: rgba(240, 255, 220, 0.5); 
-    /*margin-left: 1.31rem;*/
     margin-right:0;
     width: 37.94rem;
     margin-left: auto; /* Push the container to the right */
@@ -192,4 +191,45 @@ a:hover {
         padding-right: 0;
     }
   }
+
+  /* mobile view */
+@media only screen and (max-width: 767px) {
+    .flex-container {
+        flex-direction: column;
+    }
+    h1 {
+        padding: 3rem 1rem; /* Adjust padding for smaller screens */
+        padding-bottom: 1rem;
+        font-size: 2rem; /* Decrease font size for smaller screens */
+        text-align: center; /* Center align heading */
+    }
+    h1 + p {
+        padding: 1rem; /* Adjust padding for smaller screens */
+        padding-top: 0;
+        font-size: 1rem; /* Decrease font size for smaller screens */
+        text-align: center; /* Center align paragraph */
+    }
+    .flex-item-left {
+        width: 100%; /* Make left flex item full width */
+    }
+    .flex-item-right {
+        width: 100%; /* Make right flex item full width */
+    }
+    .form-group {
+        width: calc(100% - 2rem); /* Adjust width for smaller screens */
+        margin: 2rem 1rem; /* Adjust margin for smaller screens */
+    }
+    .form-group + p {
+        margin: 0.5rem 1rem; /* Adjust margin for smaller screens */
+        text-align: center; /* Center align paragraph */
+    }
+    .logo {
+        margin: 3rem auto; /* Center align logo */
+        padding-left: 3rem;
+    }
+    .background-leaf {
+        margin: 3rem auto; /* Center align background image */
+    }
+
+}
 
