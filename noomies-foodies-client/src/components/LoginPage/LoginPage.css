@@ -116,7 +116,7 @@ input::placeholder {
 }
 
 .form-control {
-    padding: 0rem 0rem 0rem 1.5rem;
+    padding: 0 0 0 1.5rem;
     margin: 1px;
     border-color: #D6D6D6;
     background-color: #FBFBFB;
@@ -162,6 +162,10 @@ p a {
     text-decoration: none;
     font-size: 1.125rem;
     font-weight: 600;
+    transition: color 0.5s; /* Apply transition effect to color property */
+}
+a:hover {
+    color: #376c06; /* Change link color on hover */
 }
 
 .logo {
