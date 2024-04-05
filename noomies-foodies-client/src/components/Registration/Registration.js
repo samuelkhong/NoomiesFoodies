@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import EmailInput from '../LoginForm/InputField/EmailInput';
 import PasswordInput from '../LoginForm/InputField/PasswordInput';
 import SubmitButton from '../LoginForm/SubmitButton/SubmitButton';
-import TextInput from '../LoginForm/InputField/TextInpus';
+import TextInput from '../LoginForm/InputField/TextInput';
 import "./Registration.css"
 
 
