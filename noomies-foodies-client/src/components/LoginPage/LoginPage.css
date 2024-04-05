@@ -66,6 +66,7 @@ h1 {
     top: 0;
     left: 0;
     width: calc((101.27% - 1440px) / 2); /* Adjust width based on the difference between screen width and 1440px */
+    min-width: 0;
     height: 100%; 
     background-color: rgba(240, 255, 220, 0.5); /* Set the desired background color */
     margin-right: 0; /* Ensure no right margin */
@@ -101,14 +102,16 @@ h1 {
     flex-direction: column;
     margin-bottom: 1.6875rem;
 }
-.form-element + .form-element  {
-    padding-bottom: 3.19rem;
-    margin-bottom: 0rem;
-}
-.form-element + .form-element + .form-element {
-    padding-bottom: 0rem;
+
+.form-element:nth-last-of-type(2) {
+    margin-bottom: 0;
 }
 
+.form-element:last-of-type {
+    padding-top: 3.19rem;
+    padding-bottom: 0rem;
+    margin-bottom: 0;
+}
 
 input::placeholder {
     color: #A9A9A9;
