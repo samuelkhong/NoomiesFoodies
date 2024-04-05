@@ -32,8 +32,6 @@ return (
                 <SubmitButton onClick={handleSubmit} />
             </div>
 
-       
-
         </form>
 
     </>
