@@ -1,7 +1,7 @@
 class GroceryController < ApplicationController
 
     def create
-        grocery = Grocery.create(grocery_params)
+        grocery = current_user.groceries.create(grocery_params)
 
         if grocery.valid?
             render json: grocery, status: :created
