@@ -13,7 +13,7 @@ class ShoppingListController < ApplicationController
 
     
     def create
-        @shoppinglist = ShoppingList.build(list_params)
+        @shoppinglist = ShoppingList.create(list_params)
         if @shoppinglist.save
             render json: @shoppinglist, status: :created
         else
@@ -39,7 +39,7 @@ class ShoppingListController < ApplicationController
 
 
     def list_params
-        params.require(:shoppinglist).permit(:name, :color)
+        params.require(:shopping_list).permit(:name, :color, products: [])
     end
 
 end
