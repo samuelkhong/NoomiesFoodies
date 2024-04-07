@@ -1,8 +1,12 @@
+# PostgreSQL. Versions 9.3 and up are supported.
+# Install the pg driver: gem install pg
+# Configure Using Gemfile
+# gem "pg"
+
 default: &default
   adapter: postgresql
   encoding: unicode
   pool: <%= ENV.fetch("RAILS_MAX_THREADS") { 5 } %>
-  timeout: 5000
 
 development:
   <<: *default
@@ -12,9 +16,6 @@ development:
   host: <%= ENV['DEV_HOST'] %>
   port: <%= ENV['DEV_PORT'] %>
 
-# Warning: The database defined as "test" will be erased and
-# re-generated from your development database when you run "rake".
-# Do not set this db to the same as development or production.
 test:
   <<: *default
   database: <%= ENV['TEST_DB_NAME'] %>
@@ -23,7 +24,6 @@ test:
   host: <%= ENV['TEST_HOST'] %>
   port: <%= ENV['TEST_PORT'] %>
 
-# setup for AWS RDS
 production:
   <<: *default
   database: <%= ENV['RDS_DB_NAME'] %>
