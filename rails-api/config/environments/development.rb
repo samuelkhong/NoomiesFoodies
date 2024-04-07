@@ -66,4 +66,7 @@ Rails.application.configure do
 
   # Uncomment if you wish to allow Action Cable access from any origin.
   # config.action_cable.disable_request_forgery_protection = true
+
+  # Uncomment to disable rack-attack for unmitigated requests in development
+  # Rack::Attack.enabled = false
 end
