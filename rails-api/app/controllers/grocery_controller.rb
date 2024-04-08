@@ -2,13 +2,11 @@ class GroceryController < ApplicationController
 
     def update
         grocery = current_user.groceries.find(params[:id])
-  
-        if grocery.update(grocery_params)
-            if grocery.archived_at.present?
-                render json: { message: 'Grocery Archived'}
-            else
-                render json: grocery, status: :created
-            end
+
+        if grocery.archived_at.present?
+            render json: { message: 'Grocery Archived'}
+        elsif grocery.update(grocery_params)
+            render json: grocery, status: :created
         else
             render json: { errors: grocery.errors.full_messages.to_sentence}, status: :unprocessable_entity
         end
