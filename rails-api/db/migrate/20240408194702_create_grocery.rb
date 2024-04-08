@@ -4,6 +4,7 @@ class CreateGrocery < ActiveRecord::Migration[7.0]
       t.string :name
       t.integer :user_id
       t.string :archived_at
+      t.boolean :universal
 
       t.timestamps
     end
