@@ -19,6 +19,7 @@ class Users::RegistrationsController < Devise::RegistrationsController
 
       if resource.save
         sign_in(resource)
+        create_user_fridge
         render json: {user: resource, message: 'Successfully signed up'}, status: :created
       else
         render json: { message: resource.errors.full_messages.to_sentence}, status: :unprocessable_entity
@@ -68,6 +69,11 @@ class Users::RegistrationsController < Devise::RegistrationsController
 
    def user_params
     params.permit(:email)
+   end
+
+   def create_user_fridge
+      @user = current_user
+      @user.fridges.create(name: 'Home Fridge')
    end
 
   # If you have extra params to permit, append them to the sanitizer.
