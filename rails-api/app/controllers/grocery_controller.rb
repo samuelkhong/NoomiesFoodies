@@ -26,7 +26,7 @@ class GroceryController < ApplicationController
     def destroy
         grocery = current_user.groceries.find_by(id: params[:id])
         if grocery
-            grocery.update(archived_at: Time.current.to_sentence)
+            grocery.update(archived_at: Time.current.to_s)
             head :no_content
         else
             render json: { message: 'Some error message'}, status: :unprocessable_entity
