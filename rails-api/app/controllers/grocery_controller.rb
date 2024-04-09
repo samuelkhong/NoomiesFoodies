@@ -1,8 +1,8 @@
 class GroceryController < ApplicationController
 
     def show
-        grocery = Grocery.where(user_id: current_user.id).or(Grocery.where(universal: true)).find(name: params[:name])
-
+        grocery = Grocery.where(user_id: current_user.id).or(Grocery.where(universal: true)).find_by(name: params[:name])
+        
         if grocery
             render json: grocery, status: :ok
         else
@@ -11,7 +11,7 @@ class GroceryController < ApplicationController
     end
 
     def update
-        grocery = current_user.groceries.find(params[:id])
+        grocery = current_user.groceries.find_by(id: params[:id])
 
         if grocery.archived_at.present?
             render json: { message: 'Grocery Archived'}, status: :unprocessable_entity
@@ -24,7 +24,7 @@ class GroceryController < ApplicationController
     end
 
     def destroy
-        grocery = current_user.groceries.find(params[:id])
+        grocery = current_user.groceries.find_by(id: params[:id])
         if grocery
             grocery.update(archived_at: Time.current.to_sentence)
             head :no_content
