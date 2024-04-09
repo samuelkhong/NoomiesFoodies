@@ -1,0 +1,26 @@
+
+
+.top-menu {
+    box-sizing: border-box;
+    width:81.19rem;
+    height: 5.19rem;
+    background-color: #F7FFED;
+    padding-left: .75rem;
+    padding-right: 15.81rem;
+
+}
+
+.menu-items {
+    display: flex;
+    /* align-items: center; */
+    justify-content: space-between;
+    align-items: end;
+}
+
+/* Decrease the gap between bell-icon and mail-icon */
+.bell-icon {
+    margin-left: 20px;
+}
+.mail-icon {
+    margin-right: 4rem; /* Adjust as needed */
+}
