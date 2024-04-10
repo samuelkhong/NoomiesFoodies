@@ -27,20 +27,19 @@
     box-shadow: 0 0 0 2.5px white; /* Add circular margin border */
     width:19px;
     height:19px;
-    
     position: absolute;
      
 }
 
 .email-badge {
-    right: -45%; 
+    right: -40%; 
 
-    top: -62%;
+    top: -65%;
     margin-right: 0px;
 
 }
 
 .icon{
-    display: flex;
+    display: flex;  
     justify-content: space-between;
 }
