@@ -10,11 +10,18 @@ const TopMenu = ({alertNum, emailNum}) => {
     return (
         <div className='top-menu'>
             <div className='menu-items'>
-                <SearchBar className='search-bar'></SearchBar>
+                <div className='menu-items-left'>
+                    <SearchBar className='search-bar'></SearchBar>
+                </div>
+                <div className='menu-items-right'>
+                    <a href="#" className='mail-icon'><EmailIcon notificationNum={emailNum} ></EmailIcon></a>
+                    <a href="#" className='bell-icon'><BellIcon notificationNum={alertNum} ></BellIcon></a>
+                    <Fridge className='fridge-icon'></Fridge>
+
+                </div>
                 
-                <a href="#" className='bell-icon'><BellIcon notificationNum={alertNum} ></BellIcon></a>
-                <a href="#" className='mail-icon'><EmailIcon notificationNum={emailNum} ></EmailIcon></a>
-                <Fridge className='fridge-icon'></Fridge>
+                
+                
             </div>
         </div>
     );

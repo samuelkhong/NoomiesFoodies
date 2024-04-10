@@ -14,13 +14,38 @@
     display: flex;
     /* align-items: center; */
     justify-content: space-between;
-    align-items: end;
+
+}
+
+.menu-items-left {
+    padding-top: 19px;
+
+}
+.menu-items-right {
+    display: flex;
+    
+}
+.fridge-btn {
+    margin-top: 1rem;;
+
+
+}
+.button {
+    margin-top: 25px;
 }
 
 /* Decrease the gap between bell-icon and mail-icon */
 .bell-icon {
-    margin-left: 20px;
+    margin-right: 95.85px; 
+    
 }
 .mail-icon {
-    margin-right: 4rem; /* Adjust as needed */
+    margin-right: 31.1px;
 }
+
+@media (min-width: 1441px) {
+    .top-menu {
+        width:100%;
+    }
+   }
+   
