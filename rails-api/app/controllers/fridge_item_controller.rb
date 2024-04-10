@@ -19,11 +19,16 @@ class FridgeItemController < ApplicationController
     def update
         fridge_item = find_fridge_item(params[:fridge_item_id])
 
-        if fridge_item.update(fridge_item_params)
-            render json: fridge_item, status: :ok
+        if fridge_item.archived_at.present?
+            render json: { message: 'Fridge item not found'}, status: :unprocessable_entity
         else
-            render json: { errors: fridge_item.errors.full_messages.to_sentence}, status: :unprocessable_entity
+            if fridge_item.update(fridge_item_params)
+                render json: fridge_item, status: :ok
+            else
+                render json: { errors: fridge_item.errors.full_messages.to_sentence}, status: :unprocessable_entity
+            end
         end
+
     end
 
     protected
