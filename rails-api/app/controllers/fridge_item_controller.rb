@@ -31,6 +31,16 @@ class FridgeItemController < ApplicationController
 
     end
 
+    def destroy
+        fridge_item = find_fridge_item(params[:fridge_item_id])
+        if fridge_item && fridge_item.archived_at != nil
+            fridge_item.update(archived_at: Time.current.to_s)
+            head :no_content
+        else
+            render json: { message: 'Fridge item not found'}, status: :unprocessable_entity
+        end
+    end
+
     protected
 
     def fridge_item_params
