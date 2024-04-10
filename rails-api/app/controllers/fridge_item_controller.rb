@@ -2,14 +2,18 @@ class FridgeItemController < ApplicationController
 
     def create
         fridge = find_fridge(params[:fridge_id])
-        new_fridge_item = fridge.fridge_items.create(fridge_item_params)
 
-        if new_fridge_item.valid?
-            render json: new_fridge_item, status: :created
+        if fridge
+            new_fridge_item = fridge.fridge_items.create(fridge_item_params)
+    
+            if new_fridge_item.valid?
+                render json: new_fridge_item, status: :created
+            else
+                render json: { errors: new_fridge_item.errors.full_messages.to_sentence }, status: :unprocessable_entity
+            end
         else
-            render json: { message: new_fridge_item.errors.full_messages.to_sentence }, status: :unprocessable_entity
+            render json: { message: 'Fridge not found'}, status: :unprocessable_entity
         end
-        
     end
 
     def update
@@ -18,7 +22,7 @@ class FridgeItemController < ApplicationController
         if fridge_item.update(fridge_item_params)
             render json: fridge_item, status: :ok
         else
-            render json: { message: fridge_item.errors.full_messages.to_sentence}, status: :unprocessable_entity
+            render json: { errors: fridge_item.errors.full_messages.to_sentence}, status: :unprocessable_entity
         end
     end
 
@@ -30,12 +34,21 @@ class FridgeItemController < ApplicationController
 
     def find_fridge(fridge_id)
         fridge = current_user.fridges.find_by(id: fridge_id)
+        if fridge.archived_at.present?
+            return nil
+        else
+            return fridge
+        end
     end
 
     def find_fridge_item(fridge_item_id)
         fridge = find_fridge(params[:fridge_id])
-        fridge_item = fridge.fridge_items.find_by(id: fridge_item_id)
-        return fridge_item
+        if fridge
+            fridge_item = fridge.fridge_items.find_by(id: fridge_item_id)
+            return fridge_item
+        else
+            return nil
+        end
     end
 
 end
