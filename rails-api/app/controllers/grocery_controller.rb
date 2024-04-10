@@ -1,7 +1,7 @@
 class GroceryController < ApplicationController
 
     def show
-        grocery = Grocery.where(user_id: current_user.id).or(Grocery.where(universal: true)).find_by(name: params[:name])
+        grocery = Grocery.where(user_id: current_user.id).or(Grocery.where(universal: true)).find_by(id: params[:id])
         
         if grocery
             render json: grocery, status: :ok
