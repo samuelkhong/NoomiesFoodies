@@ -6,7 +6,7 @@ class FridgeController < ApplicationController
     end
 
     def show
-        fridge = current_user.fridges.find_by(name: params[:name])
+        fridge = find_fridge(params[:id])
 
         if fridge.archived_at.present?
             render json: { message: 'There is not a fridge with that name'}, status: :unprocessable_entity
