@@ -33,7 +33,7 @@ class FridgeItemController < ApplicationController
 
     def destroy
         fridge_item = find_fridge_item(params[:fridge_item_id])
-        if fridge_item && fridge_item.archived_at != nil
+        if fridge_item && fridge_item.archived_at = nil
             fridge_item.update(archived_at: Time.current.to_s)
             head :no_content
         else
