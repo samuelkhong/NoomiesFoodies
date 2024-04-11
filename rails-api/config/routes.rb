@@ -13,4 +13,8 @@ Rails.application.routes.draw do
   resources :grocery, only: [:create, :index]
   # Defines the root path route ("/")
   # root "articles#index"
+
+  resources :shopping_list, only: [:index, :show, :create, :update, :destroy]
+
+
 end
