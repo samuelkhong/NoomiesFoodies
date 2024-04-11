@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import './DayWeekBtn.css'
 
 
 const DayWeekBtn = () => {
@@ -23,8 +24,8 @@ const DayWeekBtn = () => {
   // sets today btn to active state. 
     return (
         <div className="day-week-toggle">
-            <button className={`day ${isDay ? 'active' : ''}`} onClick={setDayView}></button>
-            <button className={`day ${isWeek ? 'active' : ''}`} onClick={setWeekView}></button>
+            <button className={`day-week-btn ${isDay ? 'active' : ''}`} onClick={setDayView}>Today</button>
+            <button className={`day-week-btn ${isWeek ? 'active' : ''}`} onClick={setWeekView}>Week</button>
         </div>
     );
 }
