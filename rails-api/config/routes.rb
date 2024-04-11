@@ -5,7 +5,7 @@ Rails.application.routes.draw do
     registrations: 'users/registrations'
   }
 
-  resource :grocery, only: [:update, :destroy, :show]
+  resources :fridge, only: [:create, :update, :show, :index]
 
   # devise_scope :user do
   #   get "sign_up", to: 'users/registrations#create'
