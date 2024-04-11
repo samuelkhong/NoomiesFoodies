@@ -12,7 +12,9 @@ Rails.application.routes.draw do
   # end
   
   # Define your application routes per the DSL in https://guides.rubyonrails.org/routing.html
-  resources :grocery, only: [:create, :index]
+  resources :grocery, only: [:index]
+  resources :fridge_item, only: [:create, :update]
+
   # Defines the root path route ("/")
   # root "articles#index"
 
