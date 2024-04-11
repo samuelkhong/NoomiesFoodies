@@ -9,14 +9,14 @@ const DayWeekBtn = () => {
 
     // sets the day state
     const setDayView = () => {
-        setIsDay(True);
-        setIsWeek(False);
+        setIsDay(true);
+        setIsWeek(false);
     }
 
     //set the view to week
     const setWeekView = () => {
-        setIsDay(False);
-        setIsWeek(True);
+        setIsDay(false);
+        setIsWeek(true);
     }
 
   // returns two buttons. day btn when clicked sets  isDay to true and is week to false. 
