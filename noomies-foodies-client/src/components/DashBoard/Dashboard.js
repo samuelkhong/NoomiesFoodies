@@ -18,7 +18,7 @@ const Dashboard = () => {
                 {/* return the appropriate component based on the url*/ }
                 <switch>
                     {/* add more routes and components here*/ }
-                    <Route path="" component={""}></Route>
+                    {/* <Route path="" component={""}></Route> */}
                 </switch>
 
 

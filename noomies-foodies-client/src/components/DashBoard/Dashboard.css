@@ -1,6 +1,9 @@
+
 .App {
   /* Assuming you want the parent element to occupy the entire viewport */
   width: 100vw;
+  text-align: left;
+
 }
 
 .flex-container {
