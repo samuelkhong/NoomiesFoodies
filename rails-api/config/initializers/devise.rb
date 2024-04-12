@@ -312,4 +312,15 @@ Devise.setup do |config|
   # config.sign_in_after_change_password = true
 
   config.action_mailer.default_url_options = { host: 'localhost', port: 8080 }
+
+  config.jwt do |jwt|
+    jwt.secret = Rails.application.credentials.devise_jwt_secret_key!
+    jwt.dispatch_requests = [
+      ['POST', %r{^/login$}]
+    ]
+    jwt.revocation_requests = [
+      ['DELETE', %r{^/logout$}]
+    ]
+    jwt.expiration_time = 30.minutes.to_i # User will have to reauthenticate after 30 minutes
+  end
 end
