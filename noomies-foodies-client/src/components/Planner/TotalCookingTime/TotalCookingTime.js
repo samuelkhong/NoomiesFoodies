@@ -1,4 +1,4 @@
-import React, {useState} from 'react';
+import React, { useState } from 'react';
 import './TotalCookingTime.css'
 
 const TotalCookingTime =  ({time}) => {

@@ -2,34 +2,31 @@
 
 .cooking-total {
     box-sizing: border-box;
-    width: 248px;
+    width: 15.5rem;
     height: 1.69rem;
 
     display: flex;
     align-items: center;
-    justify-content: left;
     font-family: 'Open Sans',  'sans-serif';
     font-weight: 700;
     font-size: 1.25rem;
-    border: 1px solid black;
 
 }
 .cooking-time {
     color: #008A48; 
 }
 .cooking-text {
-    box-sizing: border-box;
-    width: 200px;
+    width: 12.5rem;
 }
 
 .clock-icon {
     margin: 0; /* Reset margin */
     padding: 0; /* Reset padding */
-    display: inline block;
+    display: inline;
     padding-right: .94rem;
     text-align: none;
 }
-
+    
 .cooking-text {
     text-align: center;
     padding: 0; /* Reset padding */
