@@ -76,11 +76,13 @@ body {
 
 }
 .options-btn:hover {
-    background-color: rgba(0, 0, 0, 0.1); /* Change background color on hover */
+    /* background-color: rgba(0, 0, 0, 0.1); Change background color on hover */
+    transform: scale(1.1); /* Scale up the button slightly on hover */
+
     border-radius: 25px;
 }
 .options-btn:active {
-    background-color: rgba(0, 0, 0, 0.2); /* Change background color when clicked */
+    background-color: rgba(0, 0, 0, 0.05); /* Change background color when clicked */
     border-radius: 25px;
 }
 
