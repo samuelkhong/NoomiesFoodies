@@ -2,8 +2,6 @@
 
 .cooking-total {
     box-sizing: border-box;
-    /* border: solid black 1px; */
-    /* width: 15rem; */
     width: 248px;
     height: 1.69rem;
 
@@ -33,10 +31,7 @@
 }
 
 .cooking-text {
-    /* margin: 0; Reset margin */
     text-align: center;
-    /* margin-top: auto;
-    margin-bottom: auto; */
     padding: 0; /* Reset padding */
     display: inline;
 }
