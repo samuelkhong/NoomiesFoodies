@@ -2,22 +2,22 @@ import React, { useState } from 'react';
 import './DayWeekBtn.css'
 
 
-const DayWeekBtn = () => {
+const DayWeekBtn = ({isDay, setIsDay}) => {
 
     // intialize the current state holding variables
-    const [isDay, setIsDay] = useState(true); 
-    const [isWeek, setIsWeek] = useState(false);
+    // const [isDay, setIsDay] = useState(true); 
+    // const [isWeek, setIsWeek] = useState(false);
 
     // sets the day state
     const setDayView = () => {
         setIsDay(true);
-        setIsWeek(false);
+        // setIsWeek(false);
     }
 
     //set the view to week
     const setWeekView = () => {
         setIsDay(false);
-        setIsWeek(true);
+        // setIsWeek(true);
     }
 
   // returns two buttons. day btn when clicked sets  isDay to true and is week to false. 
@@ -25,7 +25,7 @@ const DayWeekBtn = () => {
     return (
         <div className="day-week-toggle">
             <button className={`day-week-btn ${isDay ? 'active' : ''}`} onClick={setDayView}>Today</button>
-            <button className={`day-week-btn ${isWeek ? 'active' : ''}`} onClick={setWeekView}>Week</button>
+            <button className={`day-week-btn ${!isDay ? 'active' : ''}`} onClick={setWeekView}>Week</button>
         </div>
     );
 }
