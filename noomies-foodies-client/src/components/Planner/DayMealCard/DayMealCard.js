@@ -5,11 +5,6 @@ import  './DayMealCard.css';
 //Todo update with meal card with correct meal object properties later
 const DayMealCard = ({mealTime, mealTitle, prepTime, cookTime, calories}) => {
 
-    const dummyMeal = "High Protein Scrambled Eggs with Cottage Cheese";
-    const dummyMealTime = "breakfast";
-    const dummyPrep = 10;
-    const dummyCook = 10;
-    const dummyCal = 200;
 
     //todo
     // when user clicks options btn, will open up options page
