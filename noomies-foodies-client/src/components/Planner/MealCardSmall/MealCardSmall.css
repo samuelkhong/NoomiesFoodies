@@ -4,7 +4,6 @@ body {
     font-family: 'Open Sans',  'sans-serif';
 }
 .meal-small-card {
-    margin: 30px;
     display: flex;
     flex-direction: column;
     text-align: center;
@@ -31,10 +30,17 @@ body {
     font-weight: 700;
     margin-top: .81rem;
     margin-bottom: 0;
+    font-size: 1rem;
 }
 .calorie-wrapper {
+    margin-top: .75rem;
     display: flex;
     justify-content: center;
+    font-weight: 400;
+    /* font-size: 1rem; */
+}
+.calorie-wrapper * {
+    font-size: 1rem;
 }
 
 .options-btn {

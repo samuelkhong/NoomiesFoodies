@@ -7,7 +7,7 @@ const MealCardSmall = () => {
         <div className='meal-small-card'>
             <h3 className='meal-time-week'>Breakfast</h3>
             <img className="recipe-small-card" src="./images/planner-icons/sample-recipe.png" alt="meal"></img>
-            <h3 className='small-card-meal-title'>High-Protein Scrambled Eggs with Cottage Cheese</h3>
+            <p className='small-card-meal-title'>High-Protein Scrambled Eggs with Cottage Cheese</p>
             <div className='calorie-wrapper'>
                 <CalorieCounter></CalorieCounter>
             </div>
