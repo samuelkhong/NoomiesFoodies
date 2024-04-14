@@ -195,14 +195,14 @@ GEM
 
 PLATFORMS
   arm64-darwin-23
-  x64-mingw-ucrt
+  x86_64-linux
 
 DEPENDENCIES
   bootsnap
   debug
   devise (~> 4.9)
   dotenv-rails (~> 3.1)
-  pg
+  pg (~> 1.5, >= 1.5.6)
   pry
   puma (~> 5.0)
   rack-attack

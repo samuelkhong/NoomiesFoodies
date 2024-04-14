@@ -14,6 +14,26 @@ ActiveRecord::Schema[7.0].define(version: 2024_04_11_134517) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
+  create_table "fridges", force: :cascade do |t|
+    t.string "name"
+    t.string "archived_at"
+    t.bigint "user_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["user_id"], name: "index_fridges_on_user_id"
+  end
+
+  create_table "groceries", force: :cascade do |t|
+    t.string "archived_at"
+    t.boolean "universal"
+    t.string "brand", limit: 100
+    t.string "quantity", limit: 100
+    t.bigint "user_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["user_id"], name: "index_groceries_on_user_id"
+  end
+
   create_table "shopping_lists", force: :cascade do |t|
     t.string "name"
     t.string "color"
@@ -38,5 +58,7 @@ ActiveRecord::Schema[7.0].define(version: 2024_04_11_134517) do
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
 
+  add_foreign_key "fridges", "users"
+  add_foreign_key "groceries", "users"
   add_foreign_key "shopping_lists", "users"
 end
