@@ -19,8 +19,8 @@ class Users::RegistrationsController < Devise::RegistrationsController
 
       if resource.save
         sign_in(resource)
-        create_user_fridge
-        render json: {user: resource, message: 'Successfully signed up'}, status: :created
+      #   create_user_fridge  ** Commented out because the method relies on an Active Record relationship method (.fridges) that does not yet exist
+        respond_with(resource)
       else
         render json: { message: resource.errors.full_messages.to_sentence}, status: :unprocessable_entity
       end
@@ -95,4 +95,18 @@ class Users::RegistrationsController < Devise::RegistrationsController
   # def after_inactive_sign_up_path_for(resource)
   #   super(resource)
   # end
+
+  private
+   def respond_with(current_user, _opts = {})
+      if resource.persisted?
+         render json: {
+            status: {code: 200, message: 'Signed up successfully.'},
+            data: UserSerializer.new(current_user).serializable_hash[:data][:attributes]
+         }
+      else
+         render json: {
+            status: {message: "User couldn't be created successfully. #{current_user.errors.full_messages.to_sentence}"}
+         }, status: :unprocessable_entity
+      end
+   end
 end
