@@ -8,7 +8,7 @@ const DayRowMeals = ({weekday, date, arrMeals}) => {
     return(
         <div className="row-meal-info-container">
             <div className="day-meal-info">
-                <div className="date">{weekday}:{date}</div>
+                <div className="date">{weekday}: {date}</div>
                 <div className="calorie-container"><CalorieCounter></CalorieCounter></div>
                 <div className="time-container"><TotalCookingTime></TotalCookingTime></div>
             </div>

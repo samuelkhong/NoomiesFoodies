@@ -22,10 +22,12 @@ body {
 .day-meal-info {
     display: flex;
     align-items: center;
+    margin-bottom: 1.88rem;
 }
 .meal-container {
     display: flex; 
-    flex-direction: row;}
+    flex-direction: row;
+}
 .meal-small-card {
     margin-right: 1.56rem;
 }
