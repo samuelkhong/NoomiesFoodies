@@ -9,6 +9,9 @@ body {
     flex-direction: column;
     margin-bottom: 4.06rem;
 }
+.row-meal-info-container:last-child {
+    margin-bottom: 0;
+}
 .date {
     color:#008A48;
     font-size: 1.5rem;
