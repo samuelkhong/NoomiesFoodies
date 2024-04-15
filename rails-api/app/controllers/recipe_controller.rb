@@ -30,6 +30,16 @@ class RecipeController < ApplicationController
         end
     end
 
+    def create
+        new_recipe = current_user.recipes.create(recipe_params)
+
+        if new_recipe.valid?
+            render json: new_recipe, status: :created
+        else
+            render json: { errors: new_recipe.errors.full_messages.to_sentence}
+        end
+    end
+
     protected
 
     def recipe_params
