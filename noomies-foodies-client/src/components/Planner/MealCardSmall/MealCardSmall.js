@@ -2,14 +2,14 @@ import React, { useState } from 'react';
 import CalorieCounter from '../CalorieCounter/CalorieCounter';
 import './MealCardSmall.css'
 
-const MealCardSmall = () => {
+const MealCardSmall = ({mealTitle, mealTime, calories }) => {
     return(
         <div className='meal-small-card'>
-            <h3 className='meal-time-week'>Breakfast</h3>
+            <h3 className='meal-time-week'>{mealTime}</h3>
             <img className="recipe-small-card" src="./images/planner-icons/sample-recipe.png" alt="meal"></img>
-            <p className='small-card-meal-title'>High-Protein Scrambled Eggs with Cottage Cheese</p>
+            <p className='small-card-meal-title'>{mealTitle}</p>
             <div className='calorie-wrapper'>
-                <CalorieCounter></CalorieCounter>
+                <CalorieCounter calorieCount={calories}></CalorieCounter>
             </div>
             <button className='options-btn' ><img src="./images/planner-icons/options-small-card.png" alt="options"></img></button>
 
