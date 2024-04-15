@@ -40,6 +40,16 @@ class RecipeController < ApplicationController
         end
     end
 
+    def destroy
+        recipe = find_recipe(params[:id])
+        if recipe.archived_at.present?
+            render json: { message: 'Recipe does not exist'}, status: :unprocessable_entity
+        else
+            recipe.update(archived_at: Time.current.to_s)
+            head :no_content
+        end
+    end
+
     protected
 
     def recipe_params
