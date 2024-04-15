@@ -18,7 +18,23 @@ class RecipeController < ApplicationController
         end
     end
 
+    def update
+        recipe = find_recipe(params[:id])
+
+        if recipe.archived_at.present?
+            render json: { message: 'Recipe does not exist'}, status: :unprocessable_entity
+        elsif recipe.update(recipe_params)
+            render json: recipe, status: :created
+        else
+            render json: { errors: recipe.errors.full_messages.to_sentence}
+        end
+    end
+
     protected
+
+    def recipe_params
+        params.permit(:name, :description)
+    end
 
     def find_recipe(id)
         current_user.recipes.find_by(id: id)
