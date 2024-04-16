@@ -22,6 +22,17 @@ class FoodController < ApplicationController
         end
     end
 
+    def destroy
+        food = find_food(params[:id])
+
+        if food
+            food.update(archived_at: Time.current.to_s)
+            head :no_content
+        else
+            render json: {message: 'You do not have access to delete this food item'}, status: :unprocessable_entity
+        end
+    end
+
     protected
 
     def food_params
