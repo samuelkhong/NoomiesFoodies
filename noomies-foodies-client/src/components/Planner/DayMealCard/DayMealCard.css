@@ -14,6 +14,7 @@ body {
     font-weight: 700;
     font-family: 'Open Sans',  'sans-serif';
     border-radius: 10px;
+    position: relative;
 
 }
 .recipe-img {
@@ -50,16 +51,24 @@ body {
 }
 
 .meal-name {
+    text-overflow: ellipsis;
+
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
     font-weight: 900;
     font-size: 1.56rem;
-    width:40.13rem;
+    min-width:40.13rem;
     height:2.13rem;
     margin-top: 2.13rem;
     margin-bottom: 1.06rem;
+    text-align: left;
 }
 .card-right-bottom {
+    width:40.13rem;
     display: flex;
     flex-wrap: wrap;
+    align-items: center;
 }
 .card-info {
     flex-basis: 50%; /* Each card-info takes up 50% of the available space */
@@ -67,8 +76,9 @@ body {
     text-align:  left;
 }
 .options-btn {
-    padding-top: .94rem;
-    padding-right: .38rem;
+    top: .94rem;
+    right: .38rem;
+    position: absolute;
     border: 0;
     background-color: rgba(0, 0, 0, 0);
     transition: background-color 0.3s ease; /* Add a transition effect */
@@ -90,14 +100,13 @@ body {
     .day-card {
         width: 100%;
     }
-    .card-right-background {
-    background-color: rgba(0, 0, 0, 0);;
-        text-align: right;
-        flex: 1;
-
-    
+    .card-right {
+        flex:1;
     }
-    
+    .meal-name {
+        width: 95%;
+    }
+
     
     
 }

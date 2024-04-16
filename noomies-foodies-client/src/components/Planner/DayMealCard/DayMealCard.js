@@ -3,7 +3,7 @@ import CalorieCounter from '../CalorieCounter/CalorieCounter';
 import  './DayMealCard.css';
 
 //Todo update with meal card with correct meal object properties later
-const DayMealCard = ({mealTime, mealTitle, prepTime, cookTime, calories}) => {
+const DayMealCard = ({mealTime, mealTitle, prepTime, cookTime, calories, imgUrl}) => {
 
 
     //todo
@@ -17,7 +17,7 @@ const DayMealCard = ({mealTime, mealTitle, prepTime, cookTime, calories}) => {
         <div className='day-card'>
             <div className='card-left'>
                 <p className='meal-time'>{mealTime}</p>
-                <img className='recipe-img' src="./images/planner-icons/sample-recipe.png"></img>
+                <img className='recipe-img' src={imgUrl}></img>
                 
             </div>
             <div className='card-right'>
@@ -30,11 +30,14 @@ const DayMealCard = ({mealTime, mealTitle, prepTime, cookTime, calories}) => {
                     <div className='card-info'><CalorieCounter calorieCount={calories}></CalorieCounter></div>
                     <div className='card-info'>Cook Time: {cookTime} minutes</div>
                 </div>
+
+                <button className='options-btn' onClick={displayCardOptions}><img src="./images/planner-icons/options.png" alt="options"></img></button>
+
                 
                 
             </div>
             <div className='card-right-background'>
-                    <button className='options-btn' onClick={displayCardOptions}><img src="./images/planner-icons/options.png" alt="options"></img></button>
+                    {/* <button className='options-btn' onClick={displayCardOptions}><img src="./images/planner-icons/options.png" alt="options"></img></button> */}
             </div>
 
 
