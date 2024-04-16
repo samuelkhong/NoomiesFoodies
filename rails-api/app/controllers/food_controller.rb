@@ -5,6 +5,17 @@ class FoodController < ApplicationController
         render json: foods, status: :ok
     end
 
+    def index_by_recipe
+        recipe = Recipe.find_by(params[:recipe_id])
+
+        if recipe
+            foods = recipe.foods.distinct
+            render json: foods, status: :ok
+        else
+            rendse json: {message: 'Could not find recipe'}, status: :unprocessable_entity
+        end
+    end
+
     def create
         food = current_user.foods.create(food_params)
 
