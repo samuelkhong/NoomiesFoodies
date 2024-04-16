@@ -2,9 +2,10 @@ import React, { useState, useEffect } from 'react';
 import DayWeekBtn from "./DayWeekBtn/DayWeekBtn";
 import MealsTodayAll from "./MealsTodayAll/MealsTodayAll";
 import DayMealCard from './DayMealCard/DayMealCard';
+import WeekMealCard from './WeekMealCard/WeekMealCard';
 import './Planner.css'
 
-const Planner = () => {
+const Planner = ({dayArr, weekArr}) => {
     const [isDay, setIsDay] = useState(true); 
     // listens to isDay. If changes, changes the component
     useEffect(() => {
@@ -21,7 +22,7 @@ const Planner = () => {
             <DayWeekBtn isDay={isDay} setIsDay={setIsDay}></DayWeekBtn>
             {/* renders componenet based on boolean isDay */}
             {/* temp placeholder daymealcard. Will eventually render MealsWeekAll */}
-            {isDay ? <MealsTodayAll></MealsTodayAll> : <DayMealCard></DayMealCard>}
+            {isDay ? <MealsTodayAll arrMeals={dayArr}></MealsTodayAll> : <WeekMealCard arrMealsWeek={weekArr}></WeekMealCard>}
         </div>
     );
 };
