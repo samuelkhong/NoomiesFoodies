@@ -10,25 +10,28 @@ const DayRowMeals = ({weekday, date, arrMeals}) => {
             mealTitle: "High-Protein Scrambled Eggs with Cottage Cheese",
             mealTime: "Breakfast",
             calories: 350,
-            time: 40
+            time: 40,
+            url: "./images/planner-icons/sample-recipe.png"
         },
         {
             mealTitle: "Grilled Chicken Salad with Avocado",
             mealTime: "Lunch",
             calories: 500,
-            time: 30
+            time: 30,
+            url: "./images/planner-icons/sample-recipe.png"
         },
         {
             mealTitle: "Spaghetti Squash with Turkey Meatballs",
             mealTime: "Dinner",
             calories: 450,
-            time: 10
+            time: 10,
+            url: "./images/planner-icons/sample-recipe.png"
         }
     ];
     
-    arrMeals = dummyMeals;
-    weekday="Wednesday";
-    date="7/7/1997"
+    // arrMeals = dummyMeals;
+    // weekday="Wednesday";
+    // date="7/7/1997"
 
     const caloriesPerDay = arrMeals.reduce((total, meal) => total + meal.calories, 0);
     const timePerDay = (arrMeals.reduce((total, meal) => total + meal.time, 0)) /60;
@@ -36,6 +39,7 @@ const DayRowMeals = ({weekday, date, arrMeals}) => {
     if ((timePerDay - roundedTime) > .05) {
         roundedTime += .1;
     }
+
 
     return(
         <div className="row-meal-info-container">
@@ -47,7 +51,7 @@ const DayRowMeals = ({weekday, date, arrMeals}) => {
 
             <div className="meal-container">
                 {arrMeals.map((meal) => (
-                    <MealCardSmall mealTitle={meal.mealTitle} mealTime={meal.mealTime} calories={meal.calories}></MealCardSmall>
+                    <MealCardSmall mealTitle={meal.mealTitle} mealTime={meal.mealTime} calories={meal.calories} imgURL={meal.url}></MealCardSmall>
                  ))}
 
 
