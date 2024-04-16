@@ -1,5 +1,10 @@
 class FoodController < ApplicationController
 
+    def index
+        foods = Food.all.where(archived_at: nil)
+        render json: foods, status: :ok
+    end
+
     def create
         food = current_user.foods.create(food_params)
 
