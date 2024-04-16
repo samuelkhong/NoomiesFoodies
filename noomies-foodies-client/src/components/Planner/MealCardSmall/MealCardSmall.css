@@ -36,6 +36,9 @@ body {
     margin-top: .75rem;
     display: flex;
     justify-content: center;
+    position: absolute;
+    bottom: 1.06rem;
+    left: 5.06rem;
     /* font-size: 1rem; */
 }
 .calorie-wrapper * {
