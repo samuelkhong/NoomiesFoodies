@@ -20,5 +20,8 @@ Rails.application.routes.draw do
 
   resources :shopping_list, only: [:index, :show, :create, :update, :destroy]
 
-
+  resources :food, only: [:index, :create, :update, :destroy]
+  resources :recipes do
+    get 'foods', to: 'foods#index_by_recipe', on: :member
+  end
 end
