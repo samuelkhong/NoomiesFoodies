@@ -3,6 +3,7 @@ import CalorieCounter from '../CalorieCounter/CalorieCounter';
 import './MealCardSmall.css'
 
 const MealCardSmall = ({mealTitle, mealTime, calories }) => {
+        
     return(
         <div className='meal-small-card'>
             <h3 className='meal-time-week'>{mealTime}</h3>
