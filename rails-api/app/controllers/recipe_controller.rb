@@ -1,11 +1,11 @@
 class RecipeController < ApplicationController
 
     def index
-        recipes = current_user.recipes.where(archived_at: nil)
+        recipes = current_user.recipes.where(archived_at: nil).includes(:foods)
         if recipes.empty?
             render json: { message: 'You have no recipes'}, status: :ok
         else
-            render json: recipes, status: :ok
+            render json: recipes, include: {foods: { only: [:id, :name, :description]}}, status: :ok
         end
     end
 
