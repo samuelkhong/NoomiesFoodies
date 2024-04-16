@@ -1,0 +1,35 @@
+.card-container{
+    display: flex;
+    max-width: 924px;
+    height: 93px;
+    background: #E3F3CD;
+    justify-content: space-between;
+    align-items: center;
+    margin: 10px;
+    padding: 0px 10px;
+}
+
+.list-content {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    margin: 10px;
+}
+
+.list-color{
+    height: 50px;
+    width: 50px;
+    border-radius: 50%;
+}
+
+.list-text{
+    font-family: Open Sans, sans-serif;
+    font-size: 20px;
+    font-weight: 700;
+    margin-left: 20px;
+}
+
+.list-button button{
+    border: none;
+    background: none;
+}
