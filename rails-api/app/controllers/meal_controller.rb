@@ -28,6 +28,18 @@ class MealController < ApplicationController
     end
   end
 
+  def update
+    meal = find_meal(params[:id])
+
+    if meal.archived_at.present?
+        render json: { message: "Whoops, that meal doesn't exist!" }, status: :unprocessable_entity
+    elsif meal.update(meal_params)
+        render json: meal, status: :created
+    else
+        render json: { errors: meal.errors.full_messages }
+    end
+end
+
 private
 
   def meal_params
