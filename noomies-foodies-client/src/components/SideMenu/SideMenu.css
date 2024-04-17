@@ -34,7 +34,7 @@ html, body {
     box-sizing: border-box;
 }
 
-li * {
+li > a {
     text-decoration: none;
 }
 .side-bar {
