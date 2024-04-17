@@ -11,6 +11,9 @@
     --fw-bold: 800;
 
 }
+* {
+    text-align: left;
+}
 
 /*standardize the page */
 .App {
@@ -31,11 +34,15 @@ html, body {
     box-sizing: border-box;
 }
 
+li * {
+    text-decoration: none;
+}
 .side-bar {
     width: 22rem;
     height: 64.13rem;
     box-sizing: border-box;
     background-color: #F7FFED;
+    
 
 }
 
