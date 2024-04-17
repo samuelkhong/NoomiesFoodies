@@ -45,6 +45,16 @@ ActiveRecord::Schema[7.0].define(version: 2024_04_15_195908) do
     t.index ["user_id"], name: "index_groceries_on_user_id"
   end
 
+  create_table "list_items", force: :cascade do |t|
+    t.string "name"
+    t.integer "quantity"
+    t.string "archived_at"
+    t.bigint "shopping_list_id", null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["shopping_list_id"], name: "index_list_items_on_shopping_list_id"
+  end
+
   create_table "shopping_lists", force: :cascade do |t|
     t.string "name"
     t.string "color"
@@ -75,5 +85,6 @@ ActiveRecord::Schema[7.0].define(version: 2024_04_15_195908) do
   add_foreign_key "fridge_items", "groceries"
   add_foreign_key "fridges", "users"
   add_foreign_key "groceries", "users"
+  add_foreign_key "list_items", "shopping_lists"
   add_foreign_key "shopping_lists", "users"
 end
