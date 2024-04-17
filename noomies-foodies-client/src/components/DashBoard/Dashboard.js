@@ -1,29 +1,34 @@
 import React, {useState} from 'react';
 import SideMenu from '../SideMenu/SideMenu';
 import TopMenu from '../TopMenu/TopMenu';
+import Planner from '../Planner/Planner';
+import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
+
 import './Dashboard.css'
 //import more components here 
 
 
-const Dashboard = () => {
+const Dashboard = ({alertNum, emailNum}) => {
 
     return (
-        <div className='flex-container'>
-            <div className='flex-item-left'>
-                <SideMenu username="sam" userProfile=""></SideMenu>
-
+        <Router>
+            <div className='flex-container'>
+                <div className='flex-item-left'>
+                    <SideMenu username="sam" userProfile="" />
+                </div>
+                <div className='flex-item-right'>   
+                    <TopMenu alertNum={alertNum} emailNum={emailNum} />
+                    <Routes>
+                        <Route
+                            path="/planner"
+                            element={<Planner />}
+                        />
+                        {/* Define other routes here */}
+                    </Routes>
+                </div>
             </div>
-            <div className='flex-item-right'>   
-                <TopMenu alertNum={3} emailNum={5}></TopMenu>
-                {/* return the appropriate component based on the url*/ }
-                <switch>
-                    {/* add more routes and components here*/ }
-                    {/* <Route path="" component={""}></Route> */}
-                </switch>
-
-
-            </div>
-        </div>
+        </Router>
     );
 };
+
 export default Dashboard;
