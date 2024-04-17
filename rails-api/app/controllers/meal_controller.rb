@@ -18,6 +18,16 @@ class MealController < ApplicationController
     end
   end
 
+  def create
+    new_meal = current_user.meals.create(meal_params)
+
+    if new_meal.valid?
+        render json: new_meal, status: :created
+    else
+        render json: { errors: new_meal.errors.full_messages }
+    end
+  end
+
 private
 
   def meal_params
