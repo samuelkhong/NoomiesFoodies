@@ -11,9 +11,7 @@
     --fw-bold: 800;
 
 }
-* {
-    text-align: left;
-}
+
 
 /*standardize the page */
 .App {
@@ -36,6 +34,7 @@ html, body {
 
 li > a {
     text-decoration: none;
+    text-align: left;
 }
 .side-bar {
     width: 22rem;
