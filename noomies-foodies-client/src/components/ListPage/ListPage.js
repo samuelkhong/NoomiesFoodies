@@ -10,7 +10,7 @@ function LisPage() {
         <>
         <Button imageUrl={"./images/list-images/Vectorcheck.png"} onButtonClick={()=>null} buttonName={"Done"}/>
         <ListCard color={background_color} />
-        
+        <ListCard color={background_color} />
         </>
      );
 }

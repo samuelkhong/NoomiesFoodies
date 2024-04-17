@@ -1,12 +1,20 @@
-import { useState } from 'react';
+import { useState, useRef } from 'react';
 import './card.css'
 import ViewMoreModal from '../ViewMoreModal/viewmore';
+import Popup from 'reactjs-popup';
 
 
 export default function ListCard ({color, children}) {
-
-    const [openViewModal, setOpenViewModal] = useState(false)
+    const ref = useRef();
+    const [openViewModal, setOpenViewModal] = useState(false);
     
+    const openModal = () => {
+        setOpenViewModal(true);
+      };
+    
+      const closeModal = () => {
+        ref.current.close();
+      };
 
     return (
         <div className="card-container">
@@ -15,11 +23,24 @@ export default function ListCard ({color, children}) {
                 <div className="list-text">To Buy Later</div>
             </div>
             <div className='list-button'>
-                <button onClick={() => setOpenViewModal(true)}>
+                <Popup
+                ref={ref}
+                trigger={
+                <button>
                 <img src="./images/list-images/pepicons-pop_dots-y.png" ></img>
                 </button>
-                {openViewModal && <ViewMoreModal />}
+                }
+                closeOnDocumentClick={true}
+                position={'bottom right'}
+                arrow={false}
+                offsetY={-35}
+                >
+                    <ViewMoreModal closeModal={closeModal}/>
+                </Popup>
             </div> 
+            
+            
+                      
         </div>
       );
-}
+};

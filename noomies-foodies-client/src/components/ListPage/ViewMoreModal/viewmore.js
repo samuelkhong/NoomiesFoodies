@@ -1,13 +1,19 @@
+import './viewmore.css'
 
-function ViewMoreModal (onDeleteClick) {
-    return (  
+function ViewMoreModal ({onDeleteClick, closeModal}) {
+    return (
+          
         <div className="modal-container">
+            <button className="modal-close" onClick={closeModal}>
+                <img src="./images/list-images/view-close.png"></img>
+            </button>
             <div className="modal-content">
-                <span className="modal-text">Edit this list</span>
+                <div className="modal-text">Edit this list</div>
                 <hr className="horizontal-line"/>
                 <button onClick={onDeleteClick} className="delete-button">Delete</button>
             </div> 
         </div>
+        
     );
 }
 
