@@ -12,6 +12,7 @@
 
 }
 
+
 /*standardize the page */
 .App {
     height: 100%
@@ -31,11 +32,16 @@ html, body {
     box-sizing: border-box;
 }
 
+li > a {
+    text-decoration: none;
+    text-align: left;
+}
 .side-bar {
     width: 22rem;
     height: 64.13rem;
     box-sizing: border-box;
     background-color: #F7FFED;
+    
 
 }
 
