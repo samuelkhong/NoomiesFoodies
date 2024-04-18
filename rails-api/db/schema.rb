@@ -55,7 +55,15 @@ ActiveRecord::Schema[7.0].define(version: 2024_04_18_001339) do
     t.index ["user_id"], name: "index_groceries_on_user_id"
   end
 
-  create_table "list_items", force: :cascade do |t|
+  create_table "meals", force: :cascade do |t|
+    t.string "category"
+    t.string "description"
+    t.string "archived_at"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+   create_table "list_items", force: :cascade do |t|
     t.string "name"
     t.integer "quantity"
     t.string "archived_at"
