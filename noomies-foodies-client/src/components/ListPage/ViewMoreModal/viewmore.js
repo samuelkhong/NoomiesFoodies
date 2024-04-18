@@ -9,7 +9,7 @@ function ViewMoreModal ({onDeleteClick, closeModal}) {
             </button>
             <div className="modal-content">
                 <div className="modal-text">Edit this list</div>
-                <hr className="horizontal-line"/>
+                <div><hr className="horizontal-line"/></div>
                 <button onClick={onDeleteClick} className="delete-button">Delete</button>
             </div> 
         </div>

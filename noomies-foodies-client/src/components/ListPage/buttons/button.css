@@ -13,6 +13,15 @@
     align-items: center;
 }
 
+.button-style:hover{
+    background-color: #376c06;;
+    cursor: pointer;
+}
+
+.button-style:active{
+    background-color: #309F48;
+}
+
 .button-text {
     font-family: 'Open Sans',  'sans-serif';
     font-weight:  400;
