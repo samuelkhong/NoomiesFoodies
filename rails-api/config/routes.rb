@@ -11,6 +11,8 @@ Rails.application.routes.draw do
   }
 
   resources :fridge, only: [:create, :update, :show, :index]
+  resources :meal, only: [:index, :show, :create, :update, :destroy]
+
   resources :grocery, only: [:index]
   resources :fridge_item, only: [:create, :update]
   resources :recipe, only: [:index, :show, :create, :update, :destroy]
