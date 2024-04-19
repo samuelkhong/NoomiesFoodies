@@ -3,11 +3,11 @@ import ColorSelector from "./ColorSelector/colorselector";
 import './ListAddModal.css'
 import { useState } from "react";
 
-function ListAddModal({value, onTextChange}) {
+function ListAddModal({updateLists, onCloseModal}) {
 
     const [border, setBorder] = useState({})
     const [selectedColor, setSelectedColor] = useState()
-    const [selectedName, setSelectedName] = useState('')
+    const [selectedName, setSelectedName] = useState("")
 
     function onColorClick(id, color) {
         setBorder({[id]: true})
@@ -21,6 +21,16 @@ function ListAddModal({value, onTextChange}) {
         ]
 
     let textString = selectedColor
+    
+    const addNewList = (updateLists) => {
+        const newList = {
+            name: selectedName,
+            color: selectedColor
+        }
+        updateLists(newList)
+        onCloseModal()
+    }
+
 
     return (
 
@@ -59,7 +69,7 @@ function ListAddModal({value, onTextChange}) {
         <div className="done-button">
             <Button 
             imageUrl={"./images/list-images/Vectorcheck.png"} 
-            onButtonClick={()=> console.log(textString)} 
+            onButtonClick={()=> addNewList(updateLists)} 
             buttonName={"Done"}
             />
         </div>
