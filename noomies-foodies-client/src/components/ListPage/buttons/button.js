@@ -1,11 +1,11 @@
 import "./button.css"
 
-export default function Button({imageUrl, onButtonClick, buttonName}) {
+export default function Button({imageUrl, onButtonClick, buttonName, width}) {
     
     return (  
-        <button onClick={onButtonClick} className="button-style">
+        <button onClick={onButtonClick} className="button-style" style={{width: width}}>
             <span>
-                <img src={imageUrl} alt="button icon" className="button-image"></img>
+                {imageUrl && <img src={imageUrl} alt="button icon" className="button-image"></img>}
                 <span className="button-text">{buttonName}</span>
             </span>
         </button>
