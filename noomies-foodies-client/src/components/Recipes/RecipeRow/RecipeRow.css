@@ -6,9 +6,11 @@ body {
 
 }
 
+
 .row-recipe-container {
     display: flex; 
     flex-direction: row;
+    flex-wrap: wrap;
 }
 .recipe-small-card {
     margin-right: 1.25rem;
