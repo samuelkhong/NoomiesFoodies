@@ -17,15 +17,22 @@
 
 .modal-content{
     margin-top: 15px;
+    width: 100%;
+    
 }
 
 .modal-text{
+    background:none;
+    width: 100%;
+    border: none;
     font-family: Open Sans;
     font-size: 14px;
     font-weight: 400;
-    cursor: pointer;
     text-align: left;
     padding-top: 2px;
+    padding-left: 5px;
+    margin: 0;
+    cursor: pointer;
 }
 
 .delete-button:hover, .modal-text:hover{
@@ -37,13 +44,15 @@
 
 .delete-button{
     background:none;
+    width: 100%;
     border: none;
     text-align: left;
     font-family: Open Sans;
     font-size: 14px;
     font-weight: 400;
     color: #D30000;
-    padding-top: 5px;
+    padding-top: 2px;
+    padding-left: 5px;;
     margin: 0;
     cursor: pointer;
 }
