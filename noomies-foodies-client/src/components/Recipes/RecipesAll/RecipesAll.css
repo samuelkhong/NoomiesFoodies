@@ -1,0 +1,30 @@
+@import url('../Recipes.css');
+
+.recipe-small-card {
+    margin-bottom: 3.06rem;
+}
+
+.meal-period {
+    font-weight: 400;
+    font-size: 1.56rem;
+}
+
+.play-icon {
+    margin-left: 17px;
+    margin-right: 17px;
+}
+
+
+@media (min-width: 1441px) {
+
+    .recipe-header {
+        width: 100%;
+    }
+    .top-add-btn > * {
+        margin-right: 7.94rem;
+    
+    }
+    
+    
+}
+
