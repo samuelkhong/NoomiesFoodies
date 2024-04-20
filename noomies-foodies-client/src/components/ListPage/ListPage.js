@@ -31,13 +31,19 @@ function ListPage() {
     const [openAddList, setOpenAddList] = useState(false)
     const closeAddModal = () => setOpenAddList(false)
 
-    const [openProdModal, setOpenProdModal] = useState(false)
-    const closeProdModal = () => setOpenProdModal(false)
+   
 
 
     const updateLists = (list) => {
         setMyLists(l => [...l, list])
     }
+
+    //change id to id instead of i.name Also in the ListCard component
+    const deleteLists = (id) => {
+        const remainingLists = myLists.filter(i => id !== i.name)
+        setMyLists(remainingLists)
+    }
+
 
     //change to add product page
     const [page, setPage] = useState(true)
@@ -66,7 +72,7 @@ function ListPage() {
             <div className="list-content-area">
                 {myLists.map( (list) => <ListCard key={list.id} color={list.color} listId={list.id} listName={list.name} 
                                             setLists={setMyLists} onEditClick={()=>updateSetPage(list.id, list.name)} editText={"View / Edit List"}
-                                            onDeleteClick={()=>console.log(`Delete ${list.id}`)}/>)}
+                                            onDeleteClick={()=>deleteLists(list.name)}/>)} 
             </div>
         </>
         }
