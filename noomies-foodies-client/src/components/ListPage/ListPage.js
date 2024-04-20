@@ -39,6 +39,7 @@ function ListPage() {
         setMyLists(l => [...l, list])
     }
 
+    //change to add product page
     const [page, setPage] = useState(true)
     const [addItemList, setAddItemList] = useState()
     const updateSetPage = (listId, listName) =>{

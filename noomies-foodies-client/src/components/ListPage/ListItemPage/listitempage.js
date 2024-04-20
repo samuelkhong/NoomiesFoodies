@@ -8,22 +8,38 @@ import { useState } from "react";
 
 function ListItemPage({listId, listName, onAddClick}) {
 
-    let listItems = [{ list_id:1, item: "milk"}, { list_id:2, item:"butter"}, {list_id:3, item:"bread"}]
+    let items = [{ list_id:1, item: "milk"}, { list_id:2, item:"butter"}, {list_id:3, item:"bread"}]
+
+    let idItems = items.filter(i => listId === i.list_id)
+    
+    const [listItems, setListItems] = useState(idItems)
 
     const [openProdModal, setOpenProdModal] = useState(false)
     const closeProdModal = () => setOpenProdModal(false)
+
+    const updateItems = (newItem) => {
+        setListItems(items => [...items, newItem])
+    }
+
+    // need to change to item id instead of i.item
+    const deleteItems = (id) => {
+        const remainingItems = listItems.filter(i => id !== i.item)
+        setListItems(remainingItems)
+    } 
+
     
     return (
         <>
             <div className="list-add-btn-area">
                 <Button imageUrl={"./images/list-images/plus-icon.png"} onButtonClick={()=>setOpenProdModal(o => !o)} buttonName={"Add Product"} width={"193px"}/>
-                <Modal open={openProdModal} onClose={closeProdModal} children={<AddProductModal />} />
+                <Modal open={openProdModal} onClose={closeProdModal} 
+                children={<AddProductModal onCloseModal={closeProdModal} listId={listId} updateItems={updateItems}/>} />
             </div>
             <div className="list-header-area">
                 {listName}
             </div>
             <div className="list-content-area">
-                {listItems.filter( i => listId === i.list_id).map((obj) => <ListCard key={obj.item} listName={obj.item}/>)}
+                {listItems.map((obj) => <ListCard key={obj.item} listName={obj.item} onDeleteClick={()=>deleteItems(obj.item)}/>)}
                 
             </div>
         
