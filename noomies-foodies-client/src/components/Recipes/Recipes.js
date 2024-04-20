@@ -5,8 +5,15 @@ import RecipeRow from './RecipeRow/RecipeRow';
 import EmptyCard from './EmptyCard/EmptyCard';
 
 
-const Recipe = ({breakfast, lunch, dinner, other}) => { 
-    lunch = false;   
+const Recipe = ({breakfast, lunch, dinner, other, setShowBackBtn, setActiveComponent}) => {
+    setShowBackBtn(false); // Hide the back button when Component1 is rendered
+
+    const handleViewAllClick = () => {
+        setShowBackBtn(true);
+        setActiveComponent('RecipesAll');
+    };
+
+
     return(
         <div className='recipe-container'>
             <div className='recipe-header'>
@@ -19,7 +26,7 @@ const Recipe = ({breakfast, lunch, dinner, other}) => {
             <div className='meal-time' >
                 <div className='recipe-category-title'>
                     <p>Breakfast:</p>
-                    <btn className="breakfast-btn view-all">View All</btn>
+                    <button className="breakfast-btn view-all" onClick={handleViewAllClick}>View All</button>
                 </div>
                 {breakfast ? (
                     <RecipeRow arrMeals={breakfast} />

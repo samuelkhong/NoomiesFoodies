@@ -8,9 +8,12 @@ body {
 .recipe-title {
     margin-top: 0;
 }
+.recipe-header {
+    width: 1015px;
+
+}
 .recipe-container {
     text-align: left;
-    max-width: 1015px;
 }
 .recipe-category-title {
     display: flex;
@@ -18,6 +21,7 @@ body {
     padding-right: 6.31rem;
     font-size: 25px;
     align-items: center;
+    width: 1015px;
 }
 .view-all {
     color: #309F48;
