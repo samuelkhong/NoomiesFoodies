@@ -13,12 +13,17 @@ const Recipe = ({breakfast, lunch, dinner, other, setShowBackBtn, setActiveCompo
         setActiveComponent('RecipesAll');
     };
 
+    const handleAddRecipe = () => {
+        setShowBackBtn(true);
+        setActiveComponent('CreateRecipe');
+    }
+
 
     return(
         <div className='recipe-container'>
             <div className='recipe-header'>
                 <div className='top-add-btn'>
-                    <RecipeBtn imgUrl={'./images/recipes-icon/plus.png'} content={'Add Recipe'} ></RecipeBtn>
+                    <RecipeBtn imgUrl={'./images/recipes-icon/plus.png'} onClick={handleAddRecipe} content={'Add Recipe'} ></RecipeBtn>
                 </div>
                 
                 <h1 className='recipe-title'>My Recipes</h1>
@@ -34,7 +39,7 @@ const Recipe = ({breakfast, lunch, dinner, other, setShowBackBtn, setActiveCompo
                     <div className="no-recipe-container">
                         <div className='empty-card-container'><EmptyCard/></div>
                         
-                        <RecipeBtn imgUrl={'./images/recipes-icon/plus.png'} content={'Add Recipe'} />
+                        <RecipeBtn imgUrl={'./images/recipes-icon/plus.png'} onClick={handleAddRecipe} content={'Add Recipe'} ></RecipeBtn>
                     </div>
                 )}
 
@@ -51,7 +56,7 @@ const Recipe = ({breakfast, lunch, dinner, other, setShowBackBtn, setActiveCompo
                     <div className="no-recipe-container">
                         <div className='empty-card-container'><EmptyCard/></div>
                         
-                        <RecipeBtn imgUrl={'./images/recipes-icon/plus.png'} content={'Add Recipe'} />
+                        <RecipeBtn imgUrl={'./images/recipes-icon/plus.png'} onClick={handleAddRecipe} content={'Add Recipe'} ></RecipeBtn>
                     </div>
                 )}
             </div >
@@ -66,7 +71,7 @@ const Recipe = ({breakfast, lunch, dinner, other, setShowBackBtn, setActiveCompo
                     <div className="no-recipe-container">
                         <div className='empty-card-container'><EmptyCard/></div>
                         
-                        <RecipeBtn imgUrl={'./images/recipes-icon/plus.png'} content={'Add Recipe'} />
+                        <RecipeBtn imgUrl={'./images/recipes-icon/plus.png'} onClick={handleAddRecipe} content={'Add Recipe'} ></RecipeBtn>
                     </div>
                 )}
             </div >
@@ -81,7 +86,7 @@ const Recipe = ({breakfast, lunch, dinner, other, setShowBackBtn, setActiveCompo
                     <div className="no-recipe-container">
                         <div className='empty-card-container'><EmptyCard/></div>
                         
-                        <RecipeBtn imgUrl={'./images/recipes-icon/plus.png'} content={'Add Recipe'} />
+                        <RecipeBtn imgUrl={'./images/recipes-icon/plus.png'} onClick={handleAddRecipe} content={'Add Recipe'} ></RecipeBtn>
                     </div>
                 )}
             </div >
