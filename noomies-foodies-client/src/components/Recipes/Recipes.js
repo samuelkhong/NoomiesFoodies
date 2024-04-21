@@ -50,7 +50,7 @@ const Recipe = ({breakfast, lunch, dinner, other, setShowBackBtn, setActiveCompo
                 
                 <h1 className='recipe-title'>My Recipes</h1>
             </div>
-            <div className='meal-time' >
+            <div className='recipe-time' >
                 <div className='recipe-category-title'>
                     <p>Breakfast:</p>
                     <button className="breakfast-btn view-all" onClick={handleBreakfast}>View All</button>
@@ -67,7 +67,7 @@ const Recipe = ({breakfast, lunch, dinner, other, setShowBackBtn, setActiveCompo
 
                 {/* <RecipeRow arrMeals={breakfast}></RecipeRow> */}
             </div >
-            <div className='meal-time' >
+            <div className='recipe-time' >
                 <div className='recipe-category-title'>
                     <p>Lunch:</p>
                     <button className="lunch-btn view-all" onClick={handleLunch}>View All</button>
@@ -82,7 +82,7 @@ const Recipe = ({breakfast, lunch, dinner, other, setShowBackBtn, setActiveCompo
                     </div>
                 )}
             </div >
-            <div className='meal-time' >
+            <div className='recipe-time' >
                 <div className='recipe-category-title'>
                     <p>Dinner:</p>
                     <button className="dinner-btn view-all" onClick={handleDinner}>View All</button>
@@ -97,7 +97,7 @@ const Recipe = ({breakfast, lunch, dinner, other, setShowBackBtn, setActiveCompo
                     </div>
                 )}
             </div >
-            <div className='meal-time' >
+            <div className='recipe-time' >
                 <div className='recipe-category-title'>
                     <p>Snacks/Other:</p>
                     <button className='other-btn view-all' onClick={handleSnack}>View All </button>

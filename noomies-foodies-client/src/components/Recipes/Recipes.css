@@ -50,9 +50,10 @@ body {
     margin-right: 5.25rem;
 
 }
-.meal-time {
+.recipe-time {
     margin-bottom: 3.38rem;
+    
 }
-.meal-time:last-child {
+.recipe-time:last-child {
     margin-bottom:0;
 }
