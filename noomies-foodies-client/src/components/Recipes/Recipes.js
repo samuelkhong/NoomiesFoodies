@@ -5,13 +5,35 @@ import RecipeRow from './RecipeRow/RecipeRow';
 import EmptyCard from './EmptyCard/EmptyCard';
 
 
-const Recipe = ({breakfast, lunch, dinner, other, setShowBackBtn, setActiveComponent}) => {
+const Recipe = ({breakfast, lunch, dinner, other, setShowBackBtn, setActiveComponent, setMealTime}) => {
     setShowBackBtn(false); // Hide the back button when Component1 is rendered
 
     const handleViewAllClick = () => {
         setShowBackBtn(true);
         setActiveComponent('RecipesAll');
     };
+    const handleBreakfast = () => {
+        setShowBackBtn(true);
+        setMealTime('Lunch');
+        setActiveComponent('RecipesAll')
+    }
+
+    const handleLunch = () => {
+        setShowBackBtn(true);
+        setMealTime('Lunch');
+        setActiveComponent('RecipesAll')
+    }
+    const handleDinner = () => {
+        setShowBackBtn(true);
+        setMealTime('Dinner');
+        setActiveComponent('RecipesAll')
+    }
+    const handleSnack = () => {
+        setShowBackBtn(true);
+        setMealTime('Snack');
+        setActiveComponent('RecipesAll')
+    }
+
 
     const handleAddRecipe = () => {
         setShowBackBtn(true);
@@ -31,7 +53,7 @@ const Recipe = ({breakfast, lunch, dinner, other, setShowBackBtn, setActiveCompo
             <div className='meal-time' >
                 <div className='recipe-category-title'>
                     <p>Breakfast:</p>
-                    <button className="breakfast-btn view-all" onClick={handleViewAllClick}>View All</button>
+                    <button className="breakfast-btn view-all" onClick={handleBreakfast}>View All</button>
                 </div>
                 {breakfast ? (
                     <RecipeRow arrMeals={breakfast} />
@@ -48,7 +70,7 @@ const Recipe = ({breakfast, lunch, dinner, other, setShowBackBtn, setActiveCompo
             <div className='meal-time' >
                 <div className='recipe-category-title'>
                     <p>Lunch:</p>
-                    <btn className="lunch-btn view-all">View All</btn>
+                    <button className="lunch-btn view-all" onClick={handleLunch}>View All</button>
                 </div>
                 {lunch ? (
                     <RecipeRow arrMeals={lunch} />
@@ -63,7 +85,7 @@ const Recipe = ({breakfast, lunch, dinner, other, setShowBackBtn, setActiveCompo
             <div className='meal-time' >
                 <div className='recipe-category-title'>
                     <p>Dinner:</p>
-                    <btn className="dinner-btn view-all">View All</btn>
+                    <button className="dinner-btn view-all" onClick={handleDinner}>View All</button>
                 </div>
                 {dinner ? (
                     <RecipeRow arrMeals={dinner} />
@@ -78,7 +100,7 @@ const Recipe = ({breakfast, lunch, dinner, other, setShowBackBtn, setActiveCompo
             <div className='meal-time' >
                 <div className='recipe-category-title'>
                     <p>Snacks/Other:</p>
-                    <btn className='other-btn view-all'>View All </btn>
+                    <button className='other-btn view-all' onClick={handleSnack}>View All </button>
                 </div>
                 {other ? (
                     <RecipeRow arrMeals={other} />
