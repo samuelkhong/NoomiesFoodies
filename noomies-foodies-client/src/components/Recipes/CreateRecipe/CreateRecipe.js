@@ -4,7 +4,7 @@ import BackBtn from '../BackBtn/BackBtn';
 import './CreateRecipe.css'
 
 
-function CreateRecipe(setShowBackBtn,setActiveComponent) {
+function CreateRecipe({setShowBackBtn,setActiveComponent}) {
 // test setShow
 
     // stores states
