@@ -5,6 +5,10 @@ body {
     box-sizing: border-box;
     font-family: 'Open Sans',  'sans-serif';
 }
+
+.view-all {
+    background-color: #FFFFFF;
+}
 .recipe-title {
     margin-top: 0;
 }
