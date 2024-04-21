@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import Recipe from "../Recipes";
 import RecipesAll from "../RecipesAll/RecipesAll";
 import BackBtn from "../BackBtn/BackBtn";
+import CreateRecipe from "../CreateRecipe/CreateRecipe";
 
 const RecipeHome = () => {
     const [showBackBtn, setShowBackBtn] = useState(false);
@@ -113,6 +114,9 @@ const RecipeHome = () => {
             )}
             {activeComponent === 'RecipesAll' && (
                 <RecipesAll food={food} mealTime={mealTime} setShowBackBtn={setShowBackBtn} setActiveComponent={setActiveComponent} />
+            )}
+            {activeComponent === 'CreateRecipe' && (
+              <CreateRecipe setShowBackBtn={setShowBackBtn} setActiveComponent={setActiveComponent} ></CreateRecipe>
             )}
         </div>
     );
