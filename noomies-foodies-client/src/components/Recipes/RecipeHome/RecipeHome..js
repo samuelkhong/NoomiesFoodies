@@ -7,15 +7,9 @@ import CreateRecipe from "../CreateRecipe/CreateRecipe";
 const RecipeHome = () => {
     const [showBackBtn, setShowBackBtn] = useState(false);
     const [activeComponent, setActiveComponent] = useState('Recipe');
+    const [mealTime, setMealTime] = useState('Breakfast');
 
-    const handleBackBtnClick = () => {
-        setShowBackBtn(false);
-        setActiveComponent('Recipe');
-    };
-
-    const backBtnTest = () => {
-        console.log('hello world');
-    }
+ 
 
     
 
@@ -102,7 +96,6 @@ const RecipeHome = () => {
         }
       ];
       const food =arrMeals;
-      const mealTime  = 'breakf'
     
 
     return (
@@ -110,7 +103,7 @@ const RecipeHome = () => {
             {/* {showBackBtn ? <BackBtn onClick={backBtnTest} /> : ''} */}
 
             {activeComponent === 'Recipe' && (
-                <Recipe setShowBackBtn={setShowBackBtn} setActiveComponent={setActiveComponent} />
+                <Recipe setShowBackBtn={setShowBackBtn} setActiveComponent={setActiveComponent} setMealTime={setMealTime} />
             )}
             {activeComponent === 'RecipesAll' && (
                 <RecipesAll food={food} mealTime={mealTime} setShowBackBtn={setShowBackBtn} setActiveComponent={setActiveComponent} />
