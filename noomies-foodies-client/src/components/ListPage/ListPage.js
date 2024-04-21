@@ -6,6 +6,7 @@ import ListAddModal from "./ListAddModal/ListAddModal";
 import AddProductModal from "./AddProductModal/addproductmodal";
 import './ListPage.css'
 import ListItemPage from "./ListItemPage/listitempage";
+import NoItems from "./ListItemPage/NoItems/noitems";
 
 
 function ListPage() {
@@ -70,9 +71,13 @@ function ListPage() {
                 My Lists
             </div>
             <div className="list-content-area">
-                {myLists.map( (list) => <ListCard key={list.id} color={list.color} listId={list.id} listName={list.name} 
+                {myLists.length > 0 ?
+                    myLists.map( (list) => <ListCard key={list.id} color={list.color} listId={list.id} listName={list.name} 
                                             setLists={setMyLists} onEditClick={()=>updateSetPage(list.id, list.name)} editText={"View / Edit List"}
-                                            onDeleteClick={()=>deleteLists(list.name)}/>)} 
+                                            onDeleteClick={()=>deleteLists(list.name)}/>)
+                    :
+                    <NoItems text={"You haven't started a grocery list yet!"}/>
+                } 
             </div>
         </>
         }

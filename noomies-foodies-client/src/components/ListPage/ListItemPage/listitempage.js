@@ -4,6 +4,7 @@ import ListCard from "../ListCard/card";
 import Button from "../buttons/button";
 import AddProductModal from "../AddProductModal/addproductmodal";
 import Modal from "../Modal/Modal";
+import NoItems from "./NoItems/noitems";
 import { useState } from "react";
 
 function ListItemPage({listId, listName, onAddClick}) {
@@ -39,7 +40,12 @@ function ListItemPage({listId, listName, onAddClick}) {
                 {listName}
             </div>
             <div className="list-content-area">
-                {listItems.map((obj) => <ListCard key={obj.item} listName={obj.item} onDeleteClick={()=>deleteItems(obj.item)}/>)}
+                
+                {listItems.length > 0 ? 
+                    listItems.map((obj) => <ListCard key={obj.item} listName={obj.item} onDeleteClick={()=>deleteItems(obj.item)}/>)
+                    : 
+                    <NoItems text={"You haven't added any products yet!"}/>
+                }
                 
             </div>
         
