@@ -19,7 +19,7 @@ class Users::RegistrationsController < Devise::RegistrationsController
 
       if resource.save
         sign_in(resource)
-      #   create_user_fridge  ** Commented out because the method relies on an Active Record relationship method (.fridges) that does not yet exist
+        create_user_fridge
         respond_with(resource)
       else
         render json: { message: resource.errors.full_messages.to_sentence}, status: :unprocessable_entity
@@ -73,7 +73,7 @@ class Users::RegistrationsController < Devise::RegistrationsController
 
    def create_user_fridge
       @user = current_user
-      @user.fridges.create(name: 'Home Fridge')
+      @user.create_fridge(name: 'Home Fridge')
    end
 
   # If you have extra params to permit, append them to the sanitizer.
@@ -99,10 +99,7 @@ class Users::RegistrationsController < Devise::RegistrationsController
   private
    def respond_with(current_user, _opts = {})
       if resource.persisted?
-         render json: {
-            status: {code: 200, message: 'Signed up successfully.'},
-            data: UserSerializer.new(current_user).serializable_hash[:data][:attributes]
-         }
+         render json: UserSerializer.new(current_user).serializable_hash[:data][:attributes], status: :created
       else
          render json: {
             status: {message: "User couldn't be created successfully. #{current_user.errors.full_messages.to_sentence}"}
