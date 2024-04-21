@@ -100,7 +100,7 @@ const RecipeHome = () => {
     
 
     return (
-        <div>
+        <div className="recipe-viewport">
             {/* {showBackBtn ? <BackBtn onClick={backBtnTest} /> : ''} */}
 
             {activeComponent === 'Recipe' && (
