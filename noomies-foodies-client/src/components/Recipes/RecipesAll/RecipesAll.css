@@ -1,4 +1,9 @@
-@import url('../Recipes.css');
+/* @import url('../Recipes.css'); */
+
+.recipe-container {
+    display: flex;
+    flex-direction: row;
+}
 
 .recipe-small-card {
     margin-bottom: 3.06rem;
