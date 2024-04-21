@@ -3,6 +3,7 @@ import Recipe from "../Recipes";
 import RecipesAll from "../RecipesAll/RecipesAll";
 import BackBtn from "../BackBtn/BackBtn";
 import CreateRecipe from "../CreateRecipe/CreateRecipe";
+import './RecipeHome.css'
 
 const RecipeHome = () => {
     const [showBackBtn, setShowBackBtn] = useState(false);
