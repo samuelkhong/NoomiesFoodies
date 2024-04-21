@@ -1,18 +1,21 @@
 /* @import url('../Recipes.css'); */
 
-.recipe-container {
+.recipe-container-all {
     display: flex;
-    flex-direction: row;
+    flex-direction: column;
+}
+.recipe-header {
+    margin-bottom: 81px;
 }
 
-.recipe-small-card {
+.row-recipe-container .recipe-small-card {
+    margin: 0; 
+    margin-right: 20px;
     margin-bottom: 3.06rem;
 }
 
-.meal-period {
-    font-weight: 400;
-    font-size: 1.56rem;
-}
+
+
 
 .play-icon {
     margin-left: 17px;

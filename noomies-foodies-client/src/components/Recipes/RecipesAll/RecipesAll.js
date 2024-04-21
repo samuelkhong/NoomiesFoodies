@@ -12,7 +12,7 @@ const RecipesAll = ({food, mealTime, setShowBackBtn, setActiveComponent  }) => {
     };
 
     return(
-        <div className='recipe-container'>
+        <div className='recipe-container-all'>
             <BackBtn onBackButtonClick={handleBackBtnClick}></BackBtn>
 
             <div className='recipe-header'>
@@ -23,9 +23,7 @@ const RecipesAll = ({food, mealTime, setShowBackBtn, setActiveComponent  }) => {
                 <h1 className='recipe-title'>My Recipes <span className='meal-period'><img className='play-icon' src='./images/recipes-icon/play-btn.png' alt='play-btn' ></img> {mealTime}</span></h1>
             </div>
 
-            <div className='meal-time'>
                 <RecipeRow arrMeals={food}></RecipeRow>
-            </div>
         
         </div>
     );
