@@ -25,7 +25,6 @@ input {
     font-size: 1.25rem;
 }
 .recipe-name-container {
-    border: solid 1px black;
     display: flex;
 }
 .recipe-name-label {
@@ -49,7 +48,6 @@ input {
 }
 .meal-time-selection-container {
     margin-top: 47px;
-    
 }
 
 .recipe-img-container  {
@@ -133,14 +131,12 @@ img > span {
     display: flex;
     flex-direction: row;
     width:33.4rem;
-    border: solid 1px black;
     flex-wrap: wrap;
 }
 
 .preptime-container, .cooktime-container, .yield-containter {
     margin-left:10.63rem;
     width: 400px;
-    border: solid 1px black;
 }
 .cooktime-input, .yield-input, .preptime-input {
     width: 109px;
@@ -161,7 +157,6 @@ img > span {
 
 .ingredients-container {
     padding-top: 36px;
-    border: solid black 1px;
     height: 186px;
 
 }
