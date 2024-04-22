@@ -6,7 +6,7 @@ const MealCardSmall = ({mealTitle, mealTime, calories, imgUrl }) => {
     return(
         <div className='meal-small-card'>
             <h3 className='meal-time-week'>{mealTime}</h3>
-            <img className="recipe-small-card" src={imgUrl} alt="meal"></img>
+            <img className="meal-small-img" src={imgUrl} alt="meal"></img>
             <p className='small-card-meal-title'>{mealTitle}</p>
             <div className='calorie-wrapper'>
                 <CalorieCounter calorieCount={calories}></CalorieCounter>
