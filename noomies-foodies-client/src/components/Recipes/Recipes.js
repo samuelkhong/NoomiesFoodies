@@ -14,7 +14,7 @@ const Recipe = ({breakfast, lunch, dinner, other, setShowBackBtn, setActiveCompo
     };
     const handleBreakfast = () => {
         setShowBackBtn(true);
-        setMealTime('Lunch');
+        setMealTime('Breakfast');
         setActiveComponent('RecipesAll')
     }
 
