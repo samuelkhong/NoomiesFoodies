@@ -11,13 +11,18 @@ const RecipesAll = ({food, mealTime, setShowBackBtn, setActiveComponent  }) => {
         setActiveComponent('Recipe'); // Switch back to Recipe component
     };
 
+    const handleAddRecipe = () => {
+        setShowBackBtn(true);
+        setActiveComponent('CreateRecipe');
+    }
+
     return(
         <div className='recipe-container-all'>
             <BackBtn onBackButtonClick={handleBackBtnClick}></BackBtn>
 
             <div className='recipe-header'>
                 <div className='top-add-btn'>
-                    <RecipeBtn imgUrl={'./images/recipes-icon/plus.png'} content={'Add Recipe'} ></RecipeBtn>
+                <RecipeBtn imgUrl={'./images/recipes-icon/plus.png'} onClick={handleAddRecipe} content={'Add Recipe'} ></RecipeBtn>
                 </div>
                 
                 <h1 className='recipe-title'>My Recipes <span className='meal-period'><img className='play-icon' src='./images/recipes-icon/play-btn.png' alt='play-btn' ></img> {mealTime}</span></h1>
