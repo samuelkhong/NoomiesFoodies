@@ -17,7 +17,7 @@ const DayMealCard = ({mealTime, mealTitle, prepTime, cookTime, calories, imgUrl}
         <div className='day-card'>
             <div className='card-left'>
                 <p className='meal-time'>{mealTime}</p>
-                <img className='recipe-img' src={imgUrl}></img>
+                <img className='today-recipe-img' src={imgUrl}></img>
                 
             </div>
             <div className='card-right'>
