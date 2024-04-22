@@ -68,6 +68,17 @@ function CreateRecipe({setShowBackBtn,setActiveComponent}) {
   // handles form submission to the backend
   const handleSubmit = (event) => {
     event.preventDefault();
+   
+
+    // use form data because we have more than one data type with img files to handle data
+    const data = new FormData();
+    //appending img to the data object
+    data.append("post[image]", event.target.imageFile.files[0]);
+
+    //dispatch the data to the redux store here
+    //TODO
+
+
     //check if meal time is selected
     if (!selectedMealTime) {
       alert("Please select at least one meal time.");
