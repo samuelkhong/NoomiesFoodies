@@ -5,6 +5,7 @@ import SideMenu from  './components/SideMenu/SideMenu';
 import Button from './components/ListPage/buttons/button';
 import SideBtn from './components/SideMenu/SideButton/SideButton';
 import ListPage from './components/ListPage/ListPage';
+import Dashboard from './components/DashBoard/Dashboard'
 
 function App() {
   
