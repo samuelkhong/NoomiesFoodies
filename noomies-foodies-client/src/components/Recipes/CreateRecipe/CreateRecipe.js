@@ -12,13 +12,25 @@ function CreateRecipe({setShowBackBtn,setActiveComponent}) {
 
   const [imageFile, setImageFile] = useState(null);
 
-  const [mealTimes, setMealTimes] = useState({
-    breakfast: false,
-    lunch: false,
-    dinner: false,
-    snack: false,
-    dessert: false,
-  });
+  // const [mealTimes, setMealTimes] = useState({
+  //   breakfast: false,
+  //   lunch: false,
+  //   dinner: false,
+  //   snack: false,
+  //   dessert: false,
+  // });
+  const [selectedMealTime, setSelectedMealTime] = useState('');
+  const handleMealTimeChange = (event) => {
+
+    const mealTime = event.target.value;
+    // Toggle the selected meal time if it's already selected
+    setSelectedMealTime((prevSelectedMealTime) =>
+      prevSelectedMealTime === mealTime ? '' : mealTime
+    );
+  };
+
+
+
 
   const [prepTime, setPrepTime] = useState('');
   const [cookTime, setCookTime] = useState('');
@@ -34,13 +46,13 @@ function CreateRecipe({setShowBackBtn,setActiveComponent}) {
     setImageFile(file);
   };
 
-  const handleMealTimeChange = (event) => {
-    const { name, checked } = event.target;
-    setMealTimes({
-      ...mealTimes,
-      [name]: checked,
-    });
-  };
+  // const handleMealTimeChange = (event) => {
+  //   const { name, checked } = event.target;
+  //   setMealTimes({
+  //     ...mealTimes,
+  //     [name]: checked,
+  //   });
+  // };
 
   const handlePrepTimeChange = (event) => {
     setPrepTime(event.target.value);
@@ -64,7 +76,7 @@ function CreateRecipe({setShowBackBtn,setActiveComponent}) {
     // For example, sending data to the server
     console.log('Recipe Name:', recipeName);
     console.log('Image File:', imageFile);
-    console.log('Meal Times:', mealTimes);
+    // console.log('Meal Times:', mealTimes);
     console.log('Prep Time:', prepTime);
     console.log('Cook Time:', cookTime);
     console.log('Yields:', yields);
@@ -72,13 +84,13 @@ function CreateRecipe({setShowBackBtn,setActiveComponent}) {
     // Reset form fields if needed
     setRecipeName('');
     setImageFile(null);
-    setMealTimes({
-      breakfast: false,
-      lunch: false,
-      dinner: false,
-      snack: false,
-      dessert: false,
-    });
+    // setMealTimes({
+    //   breakfast: false,
+    //   lunch: false,
+    //   dinner: false,
+    //   snack: false,
+    //   dessert: false,
+    // });
     setPrepTime('');
     setCookTime('');
     setYields('');
@@ -146,8 +158,9 @@ function CreateRecipe({setShowBackBtn,setActiveComponent}) {
                   id='breakfast'
                   className='breakfast'
                   type="checkbox"
-                  name="breakfast"
-                  checked={mealTimes.breakfast}
+                  name="Breakfast"
+                  value="Breakfast"
+                  checked={selectedMealTime === 'Breakfast'}
                   onChange={handleMealTimeChange}
               />
               <label htmlFor='breakfast' className='breakfast-label'>Breakfast</label> 
@@ -157,8 +170,9 @@ function CreateRecipe({setShowBackBtn,setActiveComponent}) {
                 id='lunch'
                 className='lunch'
                 type="checkbox"
-                name="lunch"
-                checked={mealTimes.lunch}
+                name="Lunch"
+                value="Lunch"
+                checked={selectedMealTime === 'Lunch'}
                 onChange={handleMealTimeChange}
               />
               <label htmlFor='lunch' className='lunch-label'>Lunch</label>
@@ -168,8 +182,9 @@ function CreateRecipe({setShowBackBtn,setActiveComponent}) {
                 id='dinner'
                 className='dinner'
                 type="checkbox"
-                name="dinner"
-                checked={mealTimes.dinner}
+                name="Dinner"
+                value="Dinner"
+                checked={selectedMealTime === 'Dinner'}
                 onChange={handleMealTimeChange}
                 
               />
@@ -181,8 +196,9 @@ function CreateRecipe({setShowBackBtn,setActiveComponent}) {
                 id='snack'
                 className='snack'
                 type="checkbox"
-                name="snack"
-                checked={mealTimes.snack}
+                name="Snack"
+                value="Snack"
+                checked={selectedMealTime === 'Snack'}
                 onChange={handleMealTimeChange}
               />
               <label htmlFor='snack' className='snack-label'>Snack</label>
@@ -192,8 +208,9 @@ function CreateRecipe({setShowBackBtn,setActiveComponent}) {
                 id="dessert"
                 className='dessert'
                 type="checkbox"
-                name="dessert"
-                checked={mealTimes.dessert}
+                name="Dessert"
+                value="Dessert"
+                checked={selectedMealTime === 'Dessert'}
                 onChange={handleMealTimeChange}
                 />
                 <label htmlFor='dessert' className='dessert-label'>Dessert</label>
@@ -277,7 +294,7 @@ function CreateRecipe({setShowBackBtn,setActiveComponent}) {
       </div>
 
       <div className='nav-btn'>
-        <button className='cancel-btn' onClick={handleBackBtnClick}>Cancel</button>
+        <button className='cancel-btn'onClick={handleBackBtnClick}>Cancel</button>
 
         <button type="submit" className='submit-btn'>Submit</button>
 
