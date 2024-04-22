@@ -4,7 +4,7 @@ import ViewMoreModal from '../ViewMoreModal/viewmore';
 import Popup from 'reactjs-popup';
 
 
-export default function ListCard ({color, listId, listName, children, setLists}) {
+export default function ListCard ({color, listId, listName, children, setLists, onEditClick, editText, onDeleteClick}) {
     const ref = useRef();
     const [openViewModal, setOpenViewModal] = useState(false);
     
@@ -19,7 +19,7 @@ export default function ListCard ({color, listId, listName, children, setLists})
     return (
         <div className="card-container">
             <div className='list-content'>
-                <div className="list-color"  style={{backgroundColor: color}}></div>
+                {color && <div className="list-color"  style={{backgroundColor: color}}></div>}
                 <div className="list-text">{listName}</div>
             </div>
             <div className='list-button'>
@@ -35,7 +35,7 @@ export default function ListCard ({color, listId, listName, children, setLists})
                 arrow={false}
                 offsetY={-35}
                 >
-                    <ViewMoreModal closeModal={closeModal}/>
+                    <ViewMoreModal closeModal={closeModal} onEditClick={onEditClick} editText={editText} onDeleteClick={onDeleteClick}/>
                 </Popup>
             </div> 
             

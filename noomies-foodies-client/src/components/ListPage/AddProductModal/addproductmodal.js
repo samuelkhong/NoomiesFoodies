@@ -1,9 +1,10 @@
 import Button from '../buttons/button';
+import PopularProdCard from '../PopularProducts/PopularProdCard';
 import './addproductmodal.css'
 import PopularFridgeButton from './PopularFridgeButton/popularfridgebtn';
 import { useState } from 'react';
 
-function AddProductModal({props}) {
+function AddProductModal({listId, updateItems, onCloseModal}) {
 
     const [itemName, setItemName] = useState("")
     const [selectedButton, setSelectedButton] = useState("Popular")
@@ -11,6 +12,22 @@ function AddProductModal({props}) {
     function popButtonClick (selection){
         setSelectedButton(selection)
     }
+
+    const addNewItem = (updateItems) => {
+        const newItem = { id: listId, item: itemName}
+        {newItem.item && updateItems(newItem)}
+        {newItem.item && onCloseModal()}
+    }
+
+    const addPopItem = (updateItems, popItemName) => {
+        const newPopItem = {id: listId, item: popItemName}
+        {newPopItem.item && updateItems(newPopItem)}
+        {newPopItem.item && onCloseModal()}
+    }
+
+    const popList = ["Whole Grain Bread", "2% Milk", "Diet Coke", "Chocolate", "Ice Cream"]
+ 
+    const [popProd, setPopProd] = useState(popList)
 
     return ( 
         <div className="prodmodal-container">
@@ -29,7 +46,7 @@ function AddProductModal({props}) {
                 <div className="add-item-button">
                     <Button 
                     imageUrl={"./images/list-images/plus-icon.png"}
-                    onButtonClick={()=>console.log(itemName)} 
+                    onButtonClick={() =>addNewItem(updateItems)} 
                     buttonName={"Add Item"} width={"140px"}/>
                 </div>
             </div>
@@ -50,7 +67,11 @@ function AddProductModal({props}) {
             </div>
 
             <div className="prodmodal-content-area">
-            content area
+                {selectedButton === "Popular" ? 
+                
+                popProd.map( (popItem) => <PopularProdCard productName={popItem} onAddClick={() =>addPopItem(updateItems, popItem)}/>)
+                
+                : "No Items In Fridge!"}
             </div>
 
         </div>
