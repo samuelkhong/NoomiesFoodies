@@ -185,7 +185,7 @@ img > span {
 .nav-btn {
     display: flex;
     align-items: center;
-    justify-content: center;
+    margin-left: 282px;
 
 }
 .cancel-btn, .submit-btn {
