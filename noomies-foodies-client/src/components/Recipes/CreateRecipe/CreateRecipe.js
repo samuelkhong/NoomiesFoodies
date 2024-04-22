@@ -277,7 +277,7 @@ function CreateRecipe({setShowBackBtn,setActiveComponent}) {
       </div>
 
       <div className='nav-btn'>
-        <button className='cancel-btn'>Cancel</button>
+        <button className='cancel-btn' onClick={handleBackBtnClick}>Cancel</button>
 
         <button type="submit" className='submit-btn'>Submit</button>
 
