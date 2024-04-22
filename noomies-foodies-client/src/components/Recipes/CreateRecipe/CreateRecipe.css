@@ -68,6 +68,7 @@ input {
     width: 15rem;
     height: 3.25rem;
     background-color: #C8E89C;
+    border-radius: 7px;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -231,4 +232,16 @@ img > span {
 
 .nav-btn {
     margin-bottom: 100px;
+}
+.add-ingredients-container {
+    margin-left: 175px;
+    margin-top: 15px;
+}
+
+.add-ingredients-container > * {
+    background-color: #C8E89C;
+    border-radius: 7px;
+    width: 209px;
+    color: #000000;
+  
 }

@@ -2,23 +2,28 @@
 import React, { useState } from 'react';
 import BackBtn from '../BackBtn/BackBtn';
 import './CreateRecipe.css'
+import RecipeBtn from '../RecipeBtn/RecipeBtn';
 
 
 function CreateRecipe({setShowBackBtn,setActiveComponent}) {
 // test setShow
 
     // stores states
+    // stores and handles name changes
   const [recipeName, setRecipeName] = useState('');
+  const handleNameChange = (event) => {
+    setRecipeName(event.target.value);
+  };
 
+  // stores image state and handles image changes
   const [imageFile, setImageFile] = useState(null);
+  const handleImageChange = (event) => {
+    const file = event.target.files[0];
+    setImageFile(file);
+  };
 
-  // const [mealTimes, setMealTimes] = useState({
-  //   breakfast: false,
-  //   lunch: false,
-  //   dinner: false,
-  //   snack: false,
-  //   dessert: false,
-  // });
+
+  // stores mealTime as a string
   const [selectedMealTime, setSelectedMealTime] = useState('');
   const handleMealTimeChange = (event) => {
 
@@ -28,32 +33,12 @@ function CreateRecipe({setShowBackBtn,setActiveComponent}) {
       prevSelectedMealTime === mealTime ? '' : mealTime
     );
   };
-
-
-
-
+  
+  // state of prep cook and yield. Handles changes
   const [prepTime, setPrepTime] = useState('');
   const [cookTime, setCookTime] = useState('');
   const [yields, setYields] = useState('');
-  const [description, setDescription] = useState('');
-
-  const handleNameChange = (event) => {
-    setRecipeName(event.target.value);
-  };
-
-  const handleImageChange = (event) => {
-    const file = event.target.files[0];
-    setImageFile(file);
-  };
-
-  // const handleMealTimeChange = (event) => {
-  //   const { name, checked } = event.target;
-  //   setMealTimes({
-  //     ...mealTimes,
-  //     [name]: checked,
-  //   });
-  // };
-
+  
   const handlePrepTimeChange = (event) => {
     setPrepTime(event.target.value);
   };
@@ -66,43 +51,52 @@ function CreateRecipe({setShowBackBtn,setActiveComponent}) {
     setYields(event.target.value);
   };
 
+  // handles back button press changes
+  const handleBackBtnClick = () => {
+    setShowBackBtn(false);
+    setActiveComponent('Recipe');
+};
+
+
+
+  // handles state of description and changes
+  const [description, setDescription] = useState('');
   const handleDescriptionChange = (event) => {
     setDescription(event.target.value);
   };
 
+  // handles form submission to the backend
   const handleSubmit = (event) => {
     event.preventDefault();
+    //check if meal time is selected
+    if (!selectedMealTime) {
+      alert("Please select at least one meal time.");
+      return;
+    }
+
+
+
     // You can add your form submission logic here
     // For example, sending data to the server
     console.log('Recipe Name:', recipeName);
     console.log('Image File:', imageFile);
-    // console.log('Meal Times:', mealTimes);
     console.log('Prep Time:', prepTime);
     console.log('Cook Time:', cookTime);
     console.log('Yields:', yields);
     console.log('Description:', description);
+    console.log('MealTime:', selectedMealTime)
+
     // Reset form fields if needed
     setRecipeName('');
     setImageFile(null);
-    // setMealTimes({
-    //   breakfast: false,
-    //   lunch: false,
-    //   dinner: false,
-    //   snack: false,
-    //   dessert: false,
-    // });
+    setSelectedMealTime('');
     setPrepTime('');
     setCookTime('');
     setYields('');
     setDescription('');
   };
 
-  //back btn function
-  const handleBackBtnClick = () => {
-    setShowBackBtn(false);
-    setActiveComponent('Recipe');
-};
-
+  
 
   return (
     <form onSubmit={handleSubmit}>
@@ -147,11 +141,8 @@ function CreateRecipe({setShowBackBtn,setActiveComponent}) {
       </div>
       <hr></hr>
 
-
       <div className='meal-time-selection-container'>
-        <h3 className='title'>
-          This recipe is for:
-        </h3>
+        <h3 className='title'>This recipe is for:</h3>
           <div className='checkboxes'>
             <div className='breakfast-container'>
               <input
@@ -272,9 +263,14 @@ function CreateRecipe({setShowBackBtn,setActiveComponent}) {
 
       <div className='ingredients-container'>
           <label className='title'>Ingredients:</label>
-          <hr></hr>
+          <div className='add-ingredients-container'>
+            <RecipeBtn imgUrl={'./images/recipes-icon/search.png'} content={"Add Ingredients"}></RecipeBtn>
 
+          </div>
+          
+          
       </div>
+      <hr></hr>
 
       <div className='directions-container'>
         <label htmlFor='directions' className='directions-label title'>Directions:</label>
@@ -295,15 +291,9 @@ function CreateRecipe({setShowBackBtn,setActiveComponent}) {
 
       <div className='nav-btn'>
         <button className='cancel-btn'onClick={handleBackBtnClick}>Cancel</button>
-
         <button type="submit" className='submit-btn'>Submit</button>
-
-
       </div>
-      
-      
 
-      
     </form>
   );
 }
