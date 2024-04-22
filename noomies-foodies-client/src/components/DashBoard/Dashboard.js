@@ -6,7 +6,7 @@ import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 
 import './Dashboard.css'
 //import more components here 
-
+import ListPage from '../ListPage/ListPage';
 
 const Dashboard = ({alertNum, emailNum}) => {
 
@@ -24,6 +24,10 @@ const Dashboard = ({alertNum, emailNum}) => {
                             element={<Planner />}
                         />
                         {/* Define other routes here */}
+                        <Route
+                            path="/grocery"
+                            element={<ListPage />}
+                        />
                     </Routes>
                 </div>
             </div>
