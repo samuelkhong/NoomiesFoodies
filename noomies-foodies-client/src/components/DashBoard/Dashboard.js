@@ -13,12 +13,12 @@ const Dashboard = ({alertNum, emailNum}) => {
 
     return (
         <Router>
-            <div className='flex-container'>
-                <div className='flex-item-left'>
-                    <SideMenu username="sam" userProfile="" />
+            <div className='flex-container-dash'>
+                <div className='flex-item-left-dash'>
+                    <SideMenu username="User" userProfile="./images/side-bar-icons/sample-headshot.png" />
                 </div>
-                <div className='flex-item-right'>   
-                    <TopMenu alertNum={alertNum} emailNum={emailNum} />
+                <div className='flex-item-right-dash'>   
+                    <TopMenu alertNum={1} emailNum={2} />
                     <Routes>
                         <Route
                             path="/planner"

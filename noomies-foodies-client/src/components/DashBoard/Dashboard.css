@@ -6,12 +6,12 @@
 
 }
 
-.flex-container {
+.flex-container-dash {
   width: 100%; /* Set the width to 100% of its parent's width */
   display: flex; /* Add flex display to enable flexbox behavior */
 }
 
-.flex-item-right {
+.flex-item-right-dash {
   /* Ensure flex items take up equal space */
   flex: 1;
 }
