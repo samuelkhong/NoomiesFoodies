@@ -9,6 +9,9 @@ import LoginPage from './components/LoginPage/LoginPage'
 import Dashboard from './components/DashBoard/Dashboard.js'
 import { useSelector } from 'react-redux';
 import { useGetRecipesQuery, useAddTodoMutation, useUpdateTodoMutation, useDeleteTodoMutation } from './features/recipesApiSlice.js';
+import RegistrationPage from './components/Registration/Registration.js';
+import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
+
 
 function App() {
 
@@ -24,8 +27,16 @@ function App() {
 
   return (
     <div className="App">
+      <Router>
+      <Routes>
+        {/* Top-level routes should use the `element` prop directly inside `Routes` */}
+        <Route path="/" element={<Dashboard />} />
+        <Route path="/login" element={<LoginPage />} />
+        <Route path="/register" element={<RegistrationPage />} />
+      </Routes>
+    </Router>
+      
 
-      {user ? <Dashboard /> : <LoginPage />}
 
     </div>
   );
