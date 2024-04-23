@@ -1,4 +1,4 @@
-class RecipeController < ApplicationController
+class RecipesController < ApplicationController
 
     def index
         recipes = current_user.recipes.where(archived_at: nil).includes(:foods)
