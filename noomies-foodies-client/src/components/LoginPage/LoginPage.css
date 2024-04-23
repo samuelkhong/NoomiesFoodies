@@ -143,11 +143,11 @@ input::placeholder {
     border: 1px;
     transition: background-color 0.3s, color 0.3s;
 }
-.submit-btn:hover {
+.submit-btn-login:hover {
     background-color: #376c06; /* Change to a darker color on hover */
 }
 
-.submit-btn:active {
+.submit-btn-login:active {
     background-color: #309F48; /* Change to a darker color when clicked */
 }
 
