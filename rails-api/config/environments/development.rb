@@ -33,7 +33,11 @@ Rails.application.configure do
   # Store uploaded files on the local file system (see config/storage.yml for options).
   config.active_storage.service = :local
 
+  #needed for devise gem  
+  config.action_mailer.default_url_options = { host: 'localhost', port: 8080 }
+ 
   # Don't care if the mailer can't send.
+  
   config.action_mailer.raise_delivery_errors = false
 
   config.action_mailer.perform_caching = false
@@ -62,4 +66,7 @@ Rails.application.configure do
 
   # Uncomment if you wish to allow Action Cable access from any origin.
   # config.action_cable.disable_request_forgery_protection = true
+
+  # Uncomment to disable rack-attack for unmitigated requests in development
+  # Rack::Attack.enabled = false
 end

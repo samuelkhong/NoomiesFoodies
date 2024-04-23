@@ -7,15 +7,17 @@
 
 Rails.application.config.middleware.insert_before 0, Rack::Cors do
   allow do
-    origins "http://localhost:3000/" # the default port for the React application
+    origins "http://localhost:3000" # the default port for the React application
 
     resource "*",
       headers: :any,
-      methods: [:get, :post, :put, :patch, :delete, :options, :head]
+      methods: [:get, :post, :put, :patch, :delete, :options, :head],
+      expose: [:Authorization],
+      credentials: true
   end
 
   allow do
-    origins "http://127.0.0.1:5000/" # the default port for the Flask Application
+    origins "http://127.0.0.1:5000" # the default port for the Flask Application
 
     resource "*",
       headers: :any,
