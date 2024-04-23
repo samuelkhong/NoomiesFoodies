@@ -2,6 +2,7 @@ import React, {useState} from 'react';
 import SideMenu from '../SideMenu/SideMenu';
 import TopMenu from '../TopMenu/TopMenu';
 import Planner from '../Planner/Planner';
+import RecipeHome from '../Recipes/RecipeHome/RecipeHome.';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 
 import './Dashboard.css'
@@ -22,6 +23,10 @@ const Dashboard = ({alertNum, emailNum}) => {
                         <Route
                             path="/planner"
                             element={<Planner />}
+                        />
+                        <Route
+                            path="/recipes"
+                            element={<RecipeHome />}
                         />
                         {/* Define other routes here */}
                         <Route
