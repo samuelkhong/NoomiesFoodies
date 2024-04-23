@@ -111,7 +111,7 @@ const Planner = () => {
             <DayWeekBtn isDay={isDay} setIsDay={setIsDay}></DayWeekBtn>
             {/* renders componenet based on boolean isDay */}
             {/* temp placeholder daymealcard. Will eventually render MealsWeekAll */}
-            {isDay ? <MealsTodayAll arrMeals={dayArr}></MealsTodayAll> : <WeekMealCard arrMealsWeek={weekArr}></WeekMealCard>}
+            {isDay ? <MealsTodayAll arrMeals={meals}></MealsTodayAll> : <WeekMealCard arrMealsWeek={arrMealsWeek}></WeekMealCard>}
         </div>
     );
 };

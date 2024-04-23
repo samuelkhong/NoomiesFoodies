@@ -10,7 +10,6 @@ import Dashboard from './components/DashBoard/Dashboard.js'
 import { useSelector } from 'react-redux';
 import { useGetRecipesQuery, useAddTodoMutation, useUpdateTodoMutation, useDeleteTodoMutation } from './features/recipesApiSlice.js';
 
-
 function App() {
 
   // const { data: recipes } = useGetRecipesQuery();
