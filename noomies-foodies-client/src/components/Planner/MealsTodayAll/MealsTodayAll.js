@@ -5,13 +5,21 @@ import DayMealCard from '../DayMealCard/DayMealCard';
 import './MealsTodayAll.css'
 
 const MealsTodayAll = ({ arrMeals }) => {
-    let totalTime = 0;
-    // sum up calories
-    const totalCalories = arrMeals.reduce((total, current) => {
-        totalTime = current.cookTime + totalTime;
-        return total + current.calories; // Accumulate the calories of each meal
-    }, 0);
     
+    let totalTime = 0;
+    let totalPrep = 0;
+    let totalCalories = 0;
+    // sum up calories
+    if (arrMeals) {
+        totalCalories = arrMeals.reduce((total, current) => {
+            totalTime = current.time + totalTime;
+            totalPrep = current.prepTime + totalPrep; // total prep time
+            return total + current.calories; // Accumulate the calories of each meal
+        }, 0);
+    }
+
+    // sum total cooking and prep time
+    totalTime += totalPrep;
     totalTime = totalTime / 60;
     // round up or down the amount of time to 1 decimal place
     let roundedTime = Math.floor(totalTime);
@@ -39,7 +47,7 @@ const MealsTodayAll = ({ arrMeals }) => {
                                 mealTitle={meal.mealTitle}
                                 mealTime={meal.mealTime}
                                 calories={meal.calories}
-                                cookTime={meal.cookTime}
+                                cookTime={meal.time}
                                 imgUrl={meal.imgUrl}
                                 prepTime={meal.prepTime}
                             />
