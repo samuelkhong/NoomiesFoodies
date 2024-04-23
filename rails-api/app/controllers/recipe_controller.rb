@@ -53,7 +53,7 @@ class RecipeController < ApplicationController
     protected
 
     def recipe_params
-        params.permit(:name, :description)
+        params.permit(:name, :image, :instructions, :yields, :prep_time, :cook_time, :category)
     end
 
     def find_recipe(id)
