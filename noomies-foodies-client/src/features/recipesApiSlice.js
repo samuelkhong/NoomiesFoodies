@@ -4,7 +4,6 @@ export const recipesApiSlice = apiSlice.injectEndpoints({
   endpoints: (builder) => ({
     getRecipes: builder.query({
       query: () => '/recipes',
-      transformResponse: res => res.sort((a, b) => b.id - a.id),
       providesTags: ['Recipes']
     }),
     addRecipe: builder.mutation({
