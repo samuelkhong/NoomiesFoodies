@@ -1,12 +1,18 @@
-
 import React, { useState } from 'react';
-import BackBtn from '../BackBtn/BackBtn';
-import './CreateRecipe.css'
-import RecipeBtn from '../RecipeBtn/RecipeBtn';
+import BackBtn from '../../BackBtn/BackBtn';
+import './EditCard.css'
+import RecipeBtn from '../../RecipeBtn/RecipeBtn';
+import Modal from '../../../ListPage/Modal/Modal';
 
 
-function CreateRecipe({setShowBackBtn,setActiveComponent}) {
+function EditCard({setShowBackBtn,setActiveComponent}) {
 // test setShow
+
+  // states for modals open . 
+  const [isOpen, setIsOpen] = useState(false); // State for controlling modal open/close
+  const openModal = () => setIsOpen(true); // Function to open modal
+  const closeModal = () => setIsOpen(false); // Function to close modal
+
 
     // stores states
     // stores and handles name changes
@@ -71,9 +77,9 @@ function CreateRecipe({setShowBackBtn,setActiveComponent}) {
    
 
     // use form data because we have more than one data type with img files to handle data
-    // const data = new FormData();
-    // //appending img to the data object
-    // data.append("post[image]", event.target.imageFile.files[0]);
+    const data = new FormData();
+    //appending img to the data object
+    data.append("post[image]", event.target.imageFile.files[0]);
 
     //dispatch the data to the redux store here
     //TODO
@@ -84,7 +90,6 @@ function CreateRecipe({setShowBackBtn,setActiveComponent}) {
       alert("Please select at least one meal time.");
       return;
     }
-    handleBackBtnClick();
 
 
 
@@ -113,10 +118,9 @@ function CreateRecipe({setShowBackBtn,setActiveComponent}) {
   return (
     <form onSubmit={handleSubmit}>
       <div className='back-btn-form-container'>
-        <BackBtn onBackButtonClick={handleBackBtnClick}></BackBtn>
       </div>
 
-      <h1 className='page-title'>Create New Recipe</h1>
+      <h1 className='page-title'>Edit Recipe</h1>
       
       <div className='recipe-name-container'>
         <label htmlFor='recipeName section' className='recipe-name-label title'>Recipe Name:</label>
@@ -276,7 +280,11 @@ function CreateRecipe({setShowBackBtn,setActiveComponent}) {
       <div className='ingredients-container'>
           <label className='title'>Ingredients:</label>
           <div className='add-ingredients-container'>
-            <RecipeBtn imgUrl={'./images/recipes-icon/search.png'} content={"Add Ingredients"}></RecipeBtn>
+
+                <RecipeBtn imgUrl={'./images/recipes-icon/search.png'} onClick={openModal} content={"Add Ingredients"}></RecipeBtn>
+
+                <Modal open={isOpen} onClose={closeModal}  />
+            
 
           </div>
           
@@ -310,4 +318,4 @@ function CreateRecipe({setShowBackBtn,setActiveComponent}) {
   );
 }
 
-export default CreateRecipe;
+export default EditCard;

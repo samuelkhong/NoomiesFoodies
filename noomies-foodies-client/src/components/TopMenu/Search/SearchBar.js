@@ -3,10 +3,38 @@ import './SearchBar.css'
 
 const SearchBar = () => {
     const [searchTerm, setSearchTerm] = useState('');
+    // filtered words from the suggestions array
+    const [filteredSuggestions, setFilteredSuggestions] = useState([]);
+    const [showSuggestions, setShowSuggestions] = useState(false);
 
+    const suggestions = [
+        "Recipe 1",
+        "Recipe 2",
+        "Recipe 3",
+        // Add more recipe names as needed
+    ];
+
+
+    // when search typed, then 
     const handleChange = (event) => {
-        setSearchTerm(event.target.value);
+        const term = event.target.value;
+        setSearchTerm(term);
+
+        // Filter suggestions based on search term
+        const filtered = suggestions.filter((suggestion) =>
+            suggestion.toLowerCase().includes(term.toLowerCase())
+        );
+        setFilteredSuggestions(filtered);
     };
+    // show suggestions when cursor only under selection 
+        const handleFocus = () => {
+            setShowSuggestions(true);
+        };
+
+        const handleBlur = () => {
+            setShowSuggestions(false);
+        };
+
 
     return (
         <form id="searchForm">
@@ -20,9 +48,13 @@ const SearchBar = () => {
                         id="searchInput" 
                         placeholder="Search" 
                         value={searchTerm} 
-                        onChange={handleChange} 
+                        onChange={handleChange}
+                        onFocus={handleFocus}
+                        onBlur={handleBlur}
+ 
                     />
                 </div>
+
             </div>
         </form>
     );

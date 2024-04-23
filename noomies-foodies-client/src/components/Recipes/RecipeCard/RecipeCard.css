@@ -9,8 +9,8 @@ body {
     display: flex;
     flex-direction: column;
     text-align: center;
-    min-width: 21.81rem;
-    min-height: 16.13rem;
+    width: 21.81rem;
+    height: 16.13rem;
     border-radius: 30px;
     position: relative;
     background-color: rgba(200, 232, 156, 0.5);

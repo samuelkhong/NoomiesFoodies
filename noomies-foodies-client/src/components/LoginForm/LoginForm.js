@@ -6,6 +6,7 @@ import { setCredentials } from '../../features/authSlice';
 import { useDispatch } from 'react-redux';
 import { useLoginMutation } from '../../features/authApiSlice';
 
+
 const LoginForm = () => {
     // State variables to store email and password input values 
     const [email, setEmail] = useState("");
@@ -14,10 +15,13 @@ const LoginForm = () => {
     const [login] = useLoginMutation()
 
     // event handler function to handle submit and send information to the backend
+
     const handleSubmit = async (event) => {
+        
         event.preventDefault();
-        let response = await login({ email, password }).unwrap();
-        dispatch(setCredentials(response))
+        // Redirect to the desired link
+        window.location.href = '/';
+
     }
     // returns a form  that has password and email input and submission button. 
     return (

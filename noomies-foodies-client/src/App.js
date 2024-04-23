@@ -8,9 +8,12 @@ import ListPage from './components/ListPage/ListPage';
 import LoginPage from './components/LoginPage/LoginPage'
 import Dashboard from './components/DashBoard/Dashboard.js'
 import { useSelector } from 'react-redux';
+import React, { useState, useEffect } from 'react';
+
 import { useGetRecipesQuery, useAddTodoMutation, useUpdateTodoMutation, useDeleteTodoMutation } from './features/recipesApiSlice.js';
 import RegistrationPage from './components/Registration/Registration.js';
-import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
+import { BrowserRouter as Router, Routes, Route, useLocation } from 'react-router-dom';
+import Fridge from './components/TopMenu/Fridge-btn/Fridge-btn.js';
 
 
 function App() {
@@ -22,17 +25,24 @@ function App() {
   // const [deleteRecipe] = useDeleteRecipeMutation()
 
 
-  const user = useSelector(state => state.auth.user)
+
+
 
 
   return (
     <div className="App">
+
+
+
       <Router>
+      {window.location.pathname !== '/login' && window.location.pathname !== '/register' && <Dashboard />}
+
+
       <Routes>
-        {/* Top-level routes should use the `element` prop directly inside `Routes` */}
-        <Route path="/" element={<Dashboard />} />
-        <Route path="/login" element={<LoginPage />} />
-        <Route path="/register" element={<RegistrationPage />} />
+          <Route path="/login" element={<LoginPage />} />
+          <Route path="/register" element={<RegistrationPage />} />
+zzz
+
       </Routes>
     </Router>
       

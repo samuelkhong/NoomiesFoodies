@@ -13,10 +13,10 @@ const LoginPage = () => {
                 <img className="background-leaf" alt="leaf" src="/images/login-fruit.png"></img>
             </div>
             <div className="flex-item-right-login">
-                <h1>Welcome <span className="clr-secondary">Back!</span></h1>
+                <h1 className='login-header'>Welcome <span className="clr-secondary">Back!</span></h1>
                 <p>Login and get started!</p>
                 <LoginForm />
-                <p>Don't have an account yet? <a href='./registration'>Sign up now!</a></p>
+                <p>Don't have an account yet? <a href='./register'>Sign up now!</a></p>
             </div>
         </div>
     </>

@@ -30,7 +30,7 @@ html, body {
     width: 100%;
 }
 
-.login-header {
+.flex-item-right-login > h1 {
     margin: 0; /* Set margin to zero to remove white space */
     padding-top: 14.06rem;
     padding-left: 13rem;

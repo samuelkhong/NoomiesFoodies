@@ -85,7 +85,18 @@ const SideMenu = ({ username, userProfile }) => {
                         > Help
                         </SideBtn>
                     </Link>
-                </li>            
+                </li>
+                <li>
+                
+                <SideBtn
+                    menuLink={'./login'}  
+                    iconUrlActive="/images/side-bar-icons/help-white.png" 
+                    iconUrlInactive="/images/side-bar-icons/logout-icon.png" 
+                    alt="logout"
+                > Logout
+                </SideBtn>
+                    
+                </li>             
             </ul>
 
             <img className='side-bar-logo' src='/images/side-bar-icons/LOGO.png' alt="logo" ></img>

@@ -4,9 +4,9 @@ import PasswordInput from '../LoginForm/InputField/PasswordInput';
 import SubmitButton from '../LoginForm/SubmitButton/SubmitButton';
 import TextInput from '../LoginForm/InputField/TextInput';
 import "./Registration.css"
-import { setCredentials } from '../../features/authSlice';
-import { useDispatch } from 'react-redux';
-import { useSignupMutation } from '../../features/authApiSlice';
+// import { setCredentials } from '../../features/authSlice';
+// import { useDispatch } from 'react-redux';
+// import { useSignupMutation } from '../../features/authApiSlice';
 
 
 const RegistrationPage = () => {
@@ -15,14 +15,17 @@ const RegistrationPage = () => {
     const [email, setEmail] = useState("");
     const [password, setPassword] = useState("");
     const [confirmPassword, setConfirmPassword] = useState("");
-    const dispatch = useDispatch();
-    const [signup, { isError }] = useSignupMutation()
+    // const dispatch = useDispatch();
+    // const [signup, { isError }] = useSignupMutation()
 
     // event handler function to handle submit and send information to the backend
-    const handleSubmit = async (event) => {
-        event.preventDefault();
-        let response = await signup({ email, password, confirmPassword }).unwrap();
-        isError ? console.log(response) : dispatch(setCredentials(response))
+    // const handleSubmit = async (event) => {
+    //     event.preventDefault();
+    //     let response = await signup({ email, password, confirmPassword }).unwrap();
+    //     isError ? console.log(response) : dispatch(setCredentials(response))
+    // }
+    const handleSubmit = () => {
+
     }
     return (
         <>
@@ -34,7 +37,7 @@ const RegistrationPage = () => {
                     <img className="background-leaf" alt="leaf" src="/images/login-fruit.png"></img>
                 </div>
 
-                <div className="flex-item-right">
+                <div className="flex-item-right-login">
                     <h1>Register <span className="clr-secondary">Now!</span></h1>
                     <p>Sign up here!</p>
 
@@ -67,7 +70,7 @@ const RegistrationPage = () => {
                         </div>
                     </form>
 
-                    <p>Already have an account? <a href='#'>Sign in here!</a></p>
+                    <p>Already have an account? <a href='./login'>Sign in here!</a></p>
                 </div>
             </div>
         </>

@@ -10,6 +10,7 @@ import './Dashboard.css'
 import ListPage from '../ListPage/ListPage';
 import LoginPage from '../LoginPage/LoginPage';
 import RegistrationPage from '../Registration/Registration';
+import Fridge from '../Fridge/fridge';
 
 const Dashboard = ({alertNum, emailNum}) => {
 
@@ -36,6 +37,10 @@ const Dashboard = ({alertNum, emailNum}) => {
                             path="/grocery"
                             element={<ListPage />}
                         />
+                        <Route path="/fridge" 
+                        element={<Fridge />} 
+                        />
+
                     </Routes>
                 </div>
             </div>
