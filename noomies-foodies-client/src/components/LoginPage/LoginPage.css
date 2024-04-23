@@ -30,7 +30,7 @@ html, body {
     width: 100%;
 }
 
-h1 {
+.login-header {
     margin: 0; /* Set margin to zero to remove white space */
     padding-top: 14.06rem;
     padding-left: 13rem;

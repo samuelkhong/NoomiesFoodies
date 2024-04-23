@@ -16,7 +16,7 @@ const LoginPage = () => {
                 <h1>Welcome <span className="clr-secondary">Back!</span></h1>
                 <p>Login and get started!</p>
                 <LoginForm />
-                <p>Don't have an account yet? <a href='#'>Sign up now!</a></p>
+                <p>Don't have an account yet? <a href='./registration'>Sign up now!</a></p>
             </div>
         </div>
     </>
