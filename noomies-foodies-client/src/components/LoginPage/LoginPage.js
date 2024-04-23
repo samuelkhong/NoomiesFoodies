@@ -12,7 +12,7 @@ const LoginPage = () => {
                 <img className="logo" alt="logo"src="/images/Logo foodies.svg"></img>
                 <img className="background-leaf" alt="leaf" src="/images/login-fruit.png"></img>
             </div>
-            <div className="flex-item-right">
+            <div className="flex-item-right-login">
                 <h1>Welcome <span className="clr-secondary">Back!</span></h1>
                 <p>Login and get started!</p>
                 <LoginForm />

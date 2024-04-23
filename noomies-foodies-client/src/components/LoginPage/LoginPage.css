@@ -79,7 +79,7 @@ h1 {
     width: 37.94rem;
     margin-left: auto; /* Push the container to the right */
 }
-.flex-item-right {
+.flex-item-right-login {
     display: flex;
     background-color: white;
     flex-direction: column;
@@ -135,7 +135,7 @@ input::placeholder {
     line-height: 1.53rem;
 }
 
-.submit-btn {
+.submit-btn-login {
     background-color: var(--primary-clr);
     color: #FFFFFF;
     border-color: var(--primary-clr);
